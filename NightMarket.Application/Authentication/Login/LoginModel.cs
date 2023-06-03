@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Identity.Authentication.Login
+namespace NightMarket.Application.Authentication.Login
 {
 	public class LoginModel
 	{
@@ -14,6 +14,6 @@ namespace NightMarket.Identity.Authentication.Login
 
 		[Required(ErrorMessage = "Password is required")]
 		public string? Password { get; set; }
-		public bool RememberMe { get; set; } = false;
+		public bool RememberMe { get; set; }
 	}
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Identity.Authentication.SignUp
+namespace NightMarket.Application.Authentication.SignUp
 {
 	public class ResetPassword
 	{

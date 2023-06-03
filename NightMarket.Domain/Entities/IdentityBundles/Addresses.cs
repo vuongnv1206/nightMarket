@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Identity.Entities
+namespace NightMarket.Domain.Entities.IdentityBundles
 {
 	public class Addresses : BaseDomainEntity
 	{

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using NightMarket.Identity.Entities;
+using NightMarket.Domain.Entities.IdentityBundles;
 using System;
 using System.Collections.Generic;
 using System.Linq;

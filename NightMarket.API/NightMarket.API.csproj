@@ -12,17 +12,12 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 	  </PackageReference>
-
+	  <PackageReference Include="MediatR" />
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\NightMarket.Application\NightMarket.Application.csproj" />
-    <ProjectReference Include="..\NightMarket.Identity\NightMarket.Identity.csproj" />
     <ProjectReference Include="..\NightMarket.Infrastructure\NightMarket.Infrastructure.csproj" />
     <ProjectReference Include="..\NightMarket.Persistence\NightMarket.Persistence.csproj" />
   </ItemGroup>

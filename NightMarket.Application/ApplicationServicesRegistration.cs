@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace NightMarket.Application
 		public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
 		{
 			services.AddAutoMapper(Assembly.GetExecutingAssembly());
-			//services.AddMediatR(Assembly.GetExecutingAssembly());
+			services.AddMediatR(Assembly.GetExecutingAssembly());
 
 			return services;
 		}
