@@ -1,4 +1,5 @@
 ﻿using NightMarket.Domain.Common;
+using NightMarket.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace NightMarket.Domain.Entities.PaymentBundles
         public double Amount { get; set; }
         public DateTime PaymentDate { get; set; }
         public string AccountNumber { get; set; }
-        public int Status { get; set; }
+        public PaymentStatus Status { get; set; }
         public bool IsDefault { get; set; }
 
     }

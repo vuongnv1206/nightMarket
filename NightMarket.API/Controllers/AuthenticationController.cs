@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,8 +8,10 @@ using Microsoft.IdentityModel.Tokens;
 using NightMarket.Application.Authentication.Login;
 using NightMarket.Application.Authentication.SignUp;
 using NightMarket.Application.Responses;
+using NightMarket.Domain.Entities.IdentityBundles;
 using NightMarket.Infrastructure.MailKit.Models;
 using NightMarket.Infrastructure.MailKit.Services;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Policy;
@@ -21,13 +24,13 @@ namespace NightMarket.API.Controllers
 	public class AuthenticationController : BaseApiController
 	{
 
-		private readonly UserManager<IdentityUser> _userManager;
+		private readonly UserManager<ApplicationUsers> _userManager;
 		private readonly RoleManager<IdentityRole> _roleManager;
 		private readonly IConfiguration _configuration;
 		private readonly IEmailService _emailService;
-		private readonly SignInManager<IdentityUser> _signInManager;
+		private readonly SignInManager<ApplicationUsers> _signInManager;
 
-		public AuthenticationController(IMediator mediator, IMapper mapper,UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,SignInManager<IdentityUser> signInManager,IEmailService emailService) : base(mediator, mapper)
+		public AuthenticationController(IMediator mediator, IMapper mapper,UserManager<ApplicationUsers> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,SignInManager<ApplicationUsers> signInManager,IEmailService emailService) : base(mediator, mapper)
 		{
 			_configuration = configuration;
 			_userManager = userManager;
@@ -47,7 +50,7 @@ namespace NightMarket.API.Controllers
 			}
 
 			//Add the User into Database
-			IdentityUser user = new()
+			ApplicationUsers user = new()
 			{
 				Email = registerUser.Email,
 				SecurityStamp = Guid.NewGuid().ToString(),
@@ -147,7 +150,47 @@ namespace NightMarket.API.Controllers
 			}
 			return Unauthorized();
 		}
-			
+
+		[HttpPost]
+		[Route("login-2FA")]
+		public async Task<IActionResult> LoginWithOTP(string code, string username)
+		{
+			var user = await _userManager.FindByNameAsync(username);
+			var signIn = await _signInManager.TwoFactorSignInAsync("Email", code, false, false);
+			if (signIn.Succeeded)
+			{
+				if (user != null)
+				{
+					var authClaims = new List<Claim>
+				{
+					new Claim(ClaimTypes.Name, user.UserName),
+					new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+				};
+					var userRoles = await _userManager.GetRolesAsync(user);
+					foreach (var role in userRoles)
+					{
+						authClaims.Add(new Claim(ClaimTypes.Role, role));
+					}
+
+					var jwtToken = GetToken(authClaims);
+
+					return Ok(new
+					{
+						token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
+						expiration = jwtToken.ValidTo
+					});
+					//returning the token...
+
+				}
+			}
+			return BadRequest(new
+			{	
+				Status = 400,
+				IsSuccess = "Error",
+				Message = $"Invalid Code"
+			});
+		}
+
 		//Generate token
 		private JwtSecurityToken GetToken(List<Claim> authClaims)
 		{
@@ -160,6 +203,68 @@ namespace NightMarket.API.Controllers
 				signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
 				);
 			return token;
+		}
+
+		[HttpPost]
+		[Route("Forgot-Password")]
+		[AllowAnonymous]
+		public async Task<IActionResult> ForgotPassword([Required] string email)
+		{
+			var user = await _userManager.FindByEmailAsync(email);
+			if (user != null)
+			{
+				var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+				var forgotPasswordlink = Url.Action(nameof(ResetPassword), "Authentication", new { token, email = user.Email }, Request.Scheme);
+				var message = new Message(new string[] { user.Email! }, "Forgot password link!", forgotPasswordlink!);
+				_emailService.SendEmail(message);
+				return StatusCode(StatusCodes.Status200OK,
+					   new { Status = "Success", Message = $"Password changed request is sent to {user.Email} Succesfully! .Please open your email and click the link" });
+			}
+			return StatusCode(StatusCodes.Status400BadRequest,
+					   new  { Status = "Error", Message = $"Could not sent link to email,please try again!" });
+		}
+
+
+
+		[HttpGet("Reset-Password")]
+		public async Task<IActionResult> ResetPassword(string token, string email)
+		{
+			var model = new ResetPassword { Token = token, Email = email };
+			return Ok(new
+			{
+				model
+			});
+		}
+
+		[HttpPost]
+		[Route("Reset-Password")]
+		[AllowAnonymous]
+		public async Task<IActionResult> ResetPassword(ResetPassword resetPassword)
+		{
+			var user = await _userManager.FindByNameAsync(resetPassword.Email);
+			if (user != null)
+			{
+				var resetPasswordResult = await _userManager.ResetPasswordAsync(user, resetPassword.Token, resetPassword.Password);
+				if (!resetPasswordResult.Succeeded)
+				{
+					foreach (var error in resetPasswordResult.Errors)
+					{
+						ModelState.AddModelError(error.Code, error.Description);
+					}
+					return Ok(ModelState);
+				}
+				return StatusCode(StatusCodes.Status200OK, new  { Status = "Success", Message = $"Password has been changed " });
+			}
+			return StatusCode(StatusCodes.Status400BadRequest,
+					   new  { Status = "Error", Message = $"Could not sent link to email,please try again!" });
+		}
+
+		[HttpPost("Logout")]
+		public async Task<IActionResult> Logout()
+		{
+			await _signInManager.SignOutAsync();
+			return StatusCode(StatusCodes.Status400BadRequest,
+					  new  { Status = "Success", Message = $"Logout successfully!" });
 		}
 	}
 }
