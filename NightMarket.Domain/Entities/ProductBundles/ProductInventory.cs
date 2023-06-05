@@ -9,7 +9,7 @@ namespace NightMarket.Domain.Entities.ProductBundles
 {
 	public class ProductInventory : BaseDomainEntity
 	{
-        public int ProductId { get; set; }
+        public int ProductItemId { get; set; }
         public int QuantityOnHand { get; set; }
         public int QuantityOnOrder { get; set; }
 

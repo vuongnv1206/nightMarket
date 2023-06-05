@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NightMarket.Application.Contracts.Persistence;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

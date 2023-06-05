@@ -14,9 +14,7 @@ namespace NightMarket.Domain.Entities.IdentityBundles
         public DateTime? DateOfBirth { get; set; }
         public bool? Gender { get; set; }
         public string? CompanyName { get; set; }
+		public IEnumerable<UserAddresses> UserAddresses { get; set; }
 
-        public IEnumerable<Addresses> Addresses { get; set; }
-
-
-    }
+	}
 }
