@@ -10,10 +10,10 @@ namespace NightMarket.Domain.Entities.ProductBundles
 	public class ProductConfigurations : BaseDomainEntity
 	{
         public int ProductItemId { get; set; }
-        public int VariationOptionsId { get; set; }
+        public int VariationOptionId { get; set; }
 
-        public ProductItems ProductItems { get; set; }
-        public VariationOptions VariationOptions { get; set; }
+        public ProductItems ProductItem { get; set; }
+        public VariationOptions VariationOption { get; set; }
 
     }
 }

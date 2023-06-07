@@ -9,11 +9,12 @@ namespace NightMarket.Domain.Entities.IdentityBundles
 {
 	public class UserAddresses : BaseDomainEntity
 	{
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int AddressId { get; set; }
         public bool IsDefault { get; set; }
 
-        public IEnumerable<Addresses> Addresses { get; set; }
+        public Addresses Address { get; set; }
+        public ApplicationUsers User { get; set; }
 
     }
 }

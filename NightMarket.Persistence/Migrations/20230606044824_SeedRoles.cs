@@ -9,17 +9,17 @@ namespace NightMarket.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "747657f1-e812-43a5-9adb-4f477f5a725f", "1", "Admin", "Admin" });
+                values: new object[] { "8add118f-9625-4438-911d-ccd31e1cb43d", "1", "Admin", "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "2c579d64-9a34-4faa-90e1-c443f19aa2b3", "2", "User", "User" });
+                values: new object[] { "63d946c6-b99f-4731-9ae4-13e642d728de", "2", "User", "User" });
 
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "893b6eca-ecab-4dc6-bf27-edf1283b080a", "3", "HR", "HR" });
+                values: new object[] { "f4f5116c-53e5-492f-842c-dc4df759e469", "3", "HR", "HR" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -27,17 +27,17 @@ namespace NightMarket.Persistence.Migrations
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "2c579d64-9a34-4faa-90e1-c443f19aa2b3");
+                keyValue: "63d946c6-b99f-4731-9ae4-13e642d728de");
 
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "747657f1-e812-43a5-9adb-4f477f5a725f");
+                keyValue: "8add118f-9625-4438-911d-ccd31e1cb43d");
 
             migrationBuilder.DeleteData(
                 table: "Roles",
                 keyColumn: "Id",
-                keyValue: "893b6eca-ecab-4dc6-bf27-edf1283b080a");
+                keyValue: "f4f5116c-53e5-492f-842c-dc4df759e469");
         }
     }
 }

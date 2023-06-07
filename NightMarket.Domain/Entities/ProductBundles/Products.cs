@@ -16,7 +16,9 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public int CategoryId { get; set; }
         public int BrandId { get; set; }
         public ProductStatus Status { get; set; }
-        public IEnumerable<Categories> Categories { get; set; }
-        public IEnumerable<Suppliers> Suppliers { get; set; }
+        public IEnumerable<ProductItems> ProductItems { get; set; }
+        public Categories Category { get; set; }
+        public Brands Brand { get; set; }
+
     }
 }

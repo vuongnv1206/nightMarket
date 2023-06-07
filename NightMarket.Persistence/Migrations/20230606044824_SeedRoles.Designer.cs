@@ -10,7 +10,7 @@ using NightMarket.Persistence;
 namespace NightMarket.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230603085114_SeedRoles")]
+    [Migration("20230606044824_SeedRoles")]
     partial class SeedRoles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,21 +50,21 @@ namespace NightMarket.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "747657f1-e812-43a5-9adb-4f477f5a725f",
+                            Id = "8add118f-9625-4438-911d-ccd31e1cb43d",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "2c579d64-9a34-4faa-90e1-c443f19aa2b3",
+                            Id = "63d946c6-b99f-4731-9ae4-13e642d728de",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "893b6eca-ecab-4dc6-bf27-edf1283b080a",
+                            Id = "f4f5116c-53e5-492f-842c-dc4df759e469",
                             ConcurrencyStamp = "3",
                             Name = "HR",
                             NormalizedName = "HR"
@@ -175,67 +175,6 @@ namespace NightMarket.Persistence.Migrations
                     b.ToTable("UserTokens");
                 });
 
-            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.Addresses", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AddressLine1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AddressLine2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LastModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("StreetNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UnitNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("ZipCode")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId1");
-
-                    b.ToTable("Addresses");
-                });
-
             modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.ApplicationUsers", b =>
                 {
                     b.Property<string>("Id")
@@ -243,6 +182,9 @@ namespace NightMarket.Persistence.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -260,6 +202,9 @@ namespace NightMarket.Persistence.Migrations
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Gender")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
@@ -359,22 +304,6 @@ namespace NightMarket.Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.Addresses", b =>
-                {
-                    b.HasOne("NightMarket.Domain.Entities.IdentityBundles.ApplicationUsers", "User")
-                        .WithMany("Addresses")
-                        .HasForeignKey("UserId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.ApplicationUsers", b =>
-                {
-                    b.Navigation("Addresses");
                 });
 #pragma warning restore 612, 618
         }

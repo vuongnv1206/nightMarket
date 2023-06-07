@@ -16,8 +16,7 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public double Price { get; set; }
         public int Stock { get; set; }
         public string? Location { get; set; }
-		public int? DiscountId { get; set; }
-
+        public Products Product { get; set; }
         public IEnumerable<ProductConfigurations> ProductConfigurations { get; set; }
     }
 }

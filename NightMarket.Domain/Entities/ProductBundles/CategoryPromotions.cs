@@ -11,7 +11,7 @@ namespace NightMarket.Domain.Entities.ProductBundles
 	{
         public int CategoryId { get; set; }
         public int PromotionId { get; set; }
-        public Categories Categories { get; set; }
-        public Promotions Promotions { get; set; }
+        public Categories Category { get; set; }
+        public Promotions Promotion { get; set; }
     }
 }
