@@ -57,7 +57,9 @@ namespace NightMarket.Persistence
 		public DbSet<Brands> Brands { get; set; }
 		public DbSet<Suppliers> Suppliers { get; set; }
 
-		
+		public DbSet<ProductCategories> ProductCategories { get; set; }
+
+
 
 
 		//Others
