@@ -1,4 +1,5 @@
 ﻿using NightMarket.Domain.Common;
+using NightMarket.Domain.Entities.Catalogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,9 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public string SKU { get; set; }
         public double Price { get; set; }
         public int Stock { get; set; }
-        public string? Location { get; set; }
+		public double? CompareAtPrice { get; set; }
+        public bool? TrackInventory { get; set; }
         public Products Product { get; set; }
-        public IEnumerable<ProductConfigurations> ProductConfigurations { get; set; }
-    }
+		public IEnumerable<ProductCombinations> ProductCombinations { get; set; }
+	}
 }

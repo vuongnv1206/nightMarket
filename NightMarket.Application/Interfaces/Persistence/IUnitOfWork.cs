@@ -13,6 +13,9 @@ namespace NightMarket.Application.Interfaces.Persistence
 		IVariationRepository VariationRepository { get; }
 
 		ICategoryRepository CategoryRepository { get; }
+		IVariationOptionRepository VariationOptionRepository { get; }
+		IProductItemRepository ProductItemRepository { get; }
+		IProductCombinationRepository ProductCombinationRepository { get; }
 		Task Save();
 	}
 }

@@ -26,7 +26,7 @@ namespace NightMarket.API.Controllers.Catalog
 		}
 
 
-		[HttpGet("{id}")]
+		[HttpGet("/variationId")]
 		public async Task<ApiResponse<GetAVariationDto>> GetAVariantion(int variationId)
 		{
 			var variationDto = await _mediator.Send(new GetAVariationRequest());
@@ -35,7 +35,7 @@ namespace NightMarket.API.Controllers.Catalog
 
 
 		[HttpPost]
-		public async Task<ActionResult<BaseCommandResponse>> CreateAProduct([FromBody] CreateAVariationDto variationDto)
+		public async Task<ActionResult<BaseCommandResponse>> CreateAVariation([FromBody] CreateAVariationDto variationDto)
 		{
 			var command = new CreateAVariationRequest { VariationDto = variationDto };
 			var response = await _mediator.Send(command);
@@ -43,20 +43,20 @@ namespace NightMarket.API.Controllers.Catalog
 		}
 
 
-		//[HttpPut("{id}")]
-		//public async Task<ActionResult<BaseCommandResponse>> UpdateAProduct([FromBody] UpdateAProductDto productDto)
-		//{
-		//	var command = new UpdateAProductRequest { ProductDto = productDto };
-		//	var response = await _mediator.Send(command);
-		//	return Ok(response);
-		//}
+		[HttpPut("/variationId")]
+		public async Task<ActionResult<BaseCommandResponse>> UpdateAVariation([FromBody] UpdateAVariationDto variationDto)
+		{
+			var command = new UpdateAVariationRequest { VariationDto = variationDto };
+			var response = await _mediator.Send(command);
+			return Ok(response);
+		}
 
-		//[HttpDelete("{id}")]
-		//public async Task<ActionResult<BaseCommandResponse>> DeleteAProduct(int productId)
-		//{
-		//	var command = new DeleteAProductRequest { ProductId = productId };
-		//	var response = await _mediator.Send(command);
-		//	return Ok(response);
-		//}
+		[HttpDelete("/variationId")]
+		public async Task<ActionResult<BaseCommandResponse>> DeleteAVariation(int variationId)
+		{
+			var command = new DeleteAVariationRequest { VariationId = variationId };
+			var response = await _mediator.Send(command);
+			return Ok(response);
+		}
 	}
 }

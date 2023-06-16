@@ -29,10 +29,10 @@ namespace NightMarket.API.Controllers.Catalog
 		}
 
 
-		[HttpGet("{id}")]
+		[HttpGet("/categoryId")]
 		public async Task<ApiResponse<GetACategoryDto>> GetACategory(int categoryId)
 		{
-			var category = await _mediator.Send(new GetACategoryRequest());
+			var category = await _mediator.Send(new GetACategoryRequest { CategoryId = categoryId});
 			return ApiResponse<GetACategoryDto>.Success(category);
 		}
 
@@ -46,7 +46,7 @@ namespace NightMarket.API.Controllers.Catalog
 		}
 
 
-		[HttpPut("{id}")]
+		[HttpPut("/categoryId")]
 		public async Task<ActionResult<BaseCommandResponse>> UpdateACategory([FromBody] UpdateACategoryDto categoryDto)
 		{
 			var command = new UpdateACategoryRequest { CategoryDto = categoryDto };
@@ -54,10 +54,10 @@ namespace NightMarket.API.Controllers.Catalog
 			return Ok(response);
 		}
 
-		[HttpDelete("{id}")]
+		[HttpDelete("/categoryId")]
 		public async Task<ActionResult<BaseCommandResponse>> DeleteACategory(int categoryId)
 		{
-			var command = new DeleteACategoryRequest { CategorytId = categoryId };
+			var command = new DeleteACategoryRequest { CategoryId = categoryId };
 			var response = await _mediator.Send(command);
 			return Ok(response);
 		}

@@ -16,15 +16,17 @@ namespace NightMarket.Application.Features.Categories.Handlers.Queries
 	public class GetAllCategoryHandler : IRequestHandler<GetAllCategoryRequest, List<GetAllCategoriesDto>>
 	{
 		private readonly IUnitOfWork _unitOfWork;
+		private readonly ICategoryRepository _categoryRepository;
 		private readonly IMapper _mapper;
-        public GetAllCategoryHandler(IUnitOfWork unitOfWork,IMapper mapper)
+        public GetAllCategoryHandler(IUnitOfWork unitOfWork,IMapper mapper,ICategoryRepository categoryRepository)
         {
             _unitOfWork = unitOfWork;
 			_mapper = mapper;
+			_categoryRepository = categoryRepository;
         }
         public async Task<List<GetAllCategoriesDto>> Handle(GetAllCategoryRequest request, CancellationToken cancellationToken)
 		{
-			var categories = await _unitOfWork.CategoryRepository.ListAsync();
+			var categories = await _categoryRepository.ListAsync();
 			return _mapper.Map<List<GetAllCategoriesDto>>(categories);
 		}
 	}

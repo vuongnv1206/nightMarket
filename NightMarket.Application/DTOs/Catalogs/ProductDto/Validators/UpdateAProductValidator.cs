@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using NightMarket.Application.Interfaces.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace NightMarket.Application.DTOs.Catalogs.Products.Validators
 {
 	public class UpdateAProductValidator : AbstractValidator<UpdateAProductDto>
 	{
-		public UpdateAProductValidator()
+		private readonly IUnitOfWork _unitOfWork;
+		public UpdateAProductValidator(IUnitOfWork unitOfWork)
 		{
-			Include(new IProductDtoValidator());
+			_unitOfWork = unitOfWork;
+			Include(new IProductDtoValidator(unitOfWork));
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using NightMarket.API.Middleware;
 using NightMarket.Application;
 using NightMarket.Infrastructure;
 using NightMarket.Persistence;
@@ -62,6 +63,8 @@ namespace NightMarket.API
 				app.UseSwagger();
 				app.UseSwaggerUI();
 			}
+
+			app.UseMiddleware<ExceptionMiddleware>();
 
 			app.UseHttpsRedirection();
 

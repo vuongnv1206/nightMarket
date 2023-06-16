@@ -26,7 +26,7 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
         public async Task<BaseCommandResponse> Handle(CreateACategoryRequest request, CancellationToken cancellationToken)
 		{
 			var response = new BaseCommandResponse();
-			var validator = new CreateACategoryDtoValidator();
+			var validator = new CreateACategoryDtoValidator(_unitOfWork);
 			var validationResult = await validator.ValidateAsync(request.CategoryDto);
 
 			if (validationResult.IsValid == false)
@@ -37,6 +37,12 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
 			}
 			else
 			{
+
+				if (request.CategoryDto.Status == Domain.Enums.CategoryStatus.Published)
+				{
+					request.CategoryDto.PublishDate = DateTime.Now;
+				}
+
 				var category = _mapper.Map<Domain.Entities.ProductBundles.Categories>(request.CategoryDto);
 
 				category = await _unitOfWork.CategoryRepository.AddAsync(category);

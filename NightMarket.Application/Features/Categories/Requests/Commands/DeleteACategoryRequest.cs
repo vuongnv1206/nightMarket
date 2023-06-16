@@ -10,6 +10,6 @@ namespace NightMarket.Application.Features.Categories.Requests.Commands
 {
 	public class DeleteACategoryRequest : IRequest<BaseCommandResponse>
 	{
-        public int CategorytId { get; set; }
+        public int CategoryId { get; set; }
     }
 }

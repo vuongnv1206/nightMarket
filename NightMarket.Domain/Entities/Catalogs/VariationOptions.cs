@@ -1,4 +1,5 @@
 ﻿using NightMarket.Domain.Common;
+using NightMarket.Domain.Entities.Catalogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public int VariationId { get; set; }
         public string Value { get; set; }
         public Variations Variation { get; set; }
-		public IEnumerable<ProductConfigurations> ProductConfigurations { get; set; }
+		public IEnumerable<ProductCombinations> ProductCombinations { get; set; }
 
 	}
 }

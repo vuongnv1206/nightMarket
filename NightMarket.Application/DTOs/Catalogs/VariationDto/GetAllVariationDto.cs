@@ -9,7 +9,7 @@ namespace NightMarket.Application.DTOs.Catalogs.Variations
 {
 	public class GetAllVariationDto : BaseDto
 	{
-		public int CategoryId { get; set; }
 		public string Name { get; set; }
+
 	}
 }
