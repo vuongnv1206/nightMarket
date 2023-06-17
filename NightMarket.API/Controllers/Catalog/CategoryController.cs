@@ -8,6 +8,7 @@ using NightMarket.Application.Features.Products.Requests.Commands;
 using NightMarket.Application.Features.Products.Requests.Queries;
 using NightMarket.Application.Responses;
 
+// hello duc
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace NightMarket.API.Controllers.Catalog
