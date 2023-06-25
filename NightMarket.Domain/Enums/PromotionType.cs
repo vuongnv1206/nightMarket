@@ -10,5 +10,6 @@ namespace NightMarket.Domain.Enums
 	{
 		Percentage = 0,
 		FixedAmount = 1,
+		FreeShipping = 2,
 	}
 }

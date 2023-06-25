@@ -235,6 +235,88 @@ namespace NightMarket.Persistence.Migrations
                     b.ToTable("ProductCombinations");
                 });
 
+            modelBuilder.Entity("NightMarket.Domain.Entities.Catalogs.ProductPromotions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PromotionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("PromotionId");
+
+                    b.ToTable("ProductPromotions");
+                });
+
+            modelBuilder.Entity("NightMarket.Domain.Entities.Catalogs.UserPromotions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActived")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PromotionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PromotionId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserPromotions");
+                });
+
             modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.Addresses", b =>
                 {
                     b.Property<int>("Id")
@@ -282,12 +364,14 @@ namespace NightMarket.Persistence.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("ZipCode")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Addresses");
                 });
@@ -370,49 +454,6 @@ namespace NightMarket.Persistence.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("Users", (string)null);
-                });
-
-            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.UserAddresses", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AddressId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeleteAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDefault")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AddressId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserAddresses");
                 });
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.Categories", b =>
@@ -787,11 +828,11 @@ namespace NightMarket.Persistence.Migrations
                     b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -799,8 +840,27 @@ namespace NightMarket.Persistence.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("LimitUsePerCustomer")
+                        .HasColumnType("int");
+
+                    b.Property<double>("MaximumValue")
+                        .HasColumnType("float");
+
+                    b.Property<double>("MinimunOrderValue")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("TotalUsageLimit")
+                        .HasColumnType("int");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -1004,21 +1064,51 @@ namespace NightMarket.Persistence.Migrations
                     b.Navigation("VariationOption");
                 });
 
-            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.UserAddresses", b =>
+            modelBuilder.Entity("NightMarket.Domain.Entities.Catalogs.ProductPromotions", b =>
                 {
-                    b.HasOne("NightMarket.Domain.Entities.IdentityBundles.Addresses", "Address")
-                        .WithMany("UserAddresses")
-                        .HasForeignKey("AddressId")
+                    b.HasOne("NightMarket.Domain.Entities.ProductBundles.Products", "Product")
+                        .WithMany("ProductPromotions")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NightMarket.Domain.Entities.ProductBundles.Promotions", "Promotion")
+                        .WithMany("ProductPromotions")
+                        .HasForeignKey("PromotionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Promotion");
+                });
+
+            modelBuilder.Entity("NightMarket.Domain.Entities.Catalogs.UserPromotions", b =>
+                {
+                    b.HasOne("NightMarket.Domain.Entities.ProductBundles.Promotions", "Promotion")
+                        .WithMany("UserPromotions")
+                        .HasForeignKey("PromotionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("NightMarket.Domain.Entities.IdentityBundles.ApplicationUsers", "User")
-                        .WithMany("UserAddresses")
+                        .WithMany("UserPromotions")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Address");
+                    b.Navigation("Promotion");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.Addresses", b =>
+                {
+                    b.HasOne("NightMarket.Domain.Entities.IdentityBundles.ApplicationUsers", "User")
+                        .WithMany("Addresses")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -1108,14 +1198,11 @@ namespace NightMarket.Persistence.Migrations
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.Addresses", b =>
-                {
-                    b.Navigation("UserAddresses");
-                });
-
             modelBuilder.Entity("NightMarket.Domain.Entities.IdentityBundles.ApplicationUsers", b =>
                 {
-                    b.Navigation("UserAddresses");
+                    b.Navigation("Addresses");
+
+                    b.Navigation("UserPromotions");
                 });
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.Categories", b =>
@@ -1136,12 +1223,18 @@ namespace NightMarket.Persistence.Migrations
 
                     b.Navigation("ProductItems");
 
+                    b.Navigation("ProductPromotions");
+
                     b.Navigation("Variations");
                 });
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.Promotions", b =>
                 {
                     b.Navigation("CategoryPromotions");
+
+                    b.Navigation("ProductPromotions");
+
+                    b.Navigation("UserPromotions");
                 });
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.VariationOptions", b =>

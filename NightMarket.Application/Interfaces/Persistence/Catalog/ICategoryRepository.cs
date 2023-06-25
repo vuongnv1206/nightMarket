@@ -1,4 +1,7 @@
-﻿using NightMarket.Domain.Entities.ProductBundles;
+﻿
+using NightMarket.Application.Helpers;
+using NightMarket.Application.Models.Parameters;
+using NightMarket.Domain.Entities.ProductBundles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +12,13 @@ namespace NightMarket.Application.Interfaces.Persistence.Catalog
 {
 	public interface ICategoryRepository : IGenericRepository<Categories>
 	{
+		Task<PagedList<Categories>> ListAsync(CategoryParameters parameters);
+		Task<List<Categories>> GetCategoriesNotInProduct(CategoryParameters parameters);
+
+		Task<List<Categories>> GetCategoriesOfProduct(int productId);
+
+		Task<List<Categories>> GetCategoriesNotInPromotion(CategoryParameters parameters);
+
+		Task<List<Categories>> GetCategoriesByPromotion(int promotionId);
 	}
 }

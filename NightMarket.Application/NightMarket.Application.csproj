@@ -12,21 +12,23 @@
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.0" />
+		<PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.2" />
 	</ItemGroup>
 
   <ItemGroup>
     <Folder Include="Constants\" />
-    <Folder Include="DTOs\Catalogs\ProductConfigurationDto\" />
+    <Folder Include="DTOs\Catalogs\ProductCombinationDto\" />
     <Folder Include="Features\Coupons\Handlers\Commands\" />
     <Folder Include="Features\Coupons\Handlers\Queries\" />
     <Folder Include="Features\Coupons\Requests\Commands\" />
     <Folder Include="Features\Coupons\Requests\Queries\" />
+    <Folder Include="Features\ProductCategories\Handlers\Queries\" />
+    <Folder Include="Features\ProductCategories\Requests\Queries\" />
     <Folder Include="Features\ProductCombinations\Handlers\Commands\" />
     <Folder Include="Features\ProductCombinations\Handlers\Queries\" />
     <Folder Include="Features\ProductCombinations\Requests\Commands\" />
     <Folder Include="Features\ProductCombinations\Requests\Queries\" />
     <Folder Include="Interfaces\Infrastructure\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>

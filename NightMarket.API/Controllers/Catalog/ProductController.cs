@@ -1,16 +1,20 @@
 ﻿
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using NightMarket.Application.DTOs.Catalogs.Products;
 using NightMarket.Application.Features.Products.Requests.Commands;
 using NightMarket.Application.Features.Products.Requests.Queries;
+using NightMarket.Application.Helpers;
+using NightMarket.Application.Models.Parameters;
 using NightMarket.Application.Responses;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace NightMarket.API.Controllers.Catalog
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[ApiController]
 	public class ProductController : BaseApiController
 	{
@@ -18,11 +22,21 @@ namespace NightMarket.API.Controllers.Catalog
 		{
 		}
 
-		[HttpGet]
-		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProducts()
+		[HttpGet("all")]
+		public async Task<ApiResponse<PagedList<GetAllProductsDto>>> GetProducts([FromQuery] ProductParameters parameters)
 		{
-			var products = await _mediator.Send(new GetAllProductRequest());
-			return ApiResponse<List<GetAllProductsDto>>.Success(products);
+			var products = await _mediator.Send(new GetAllProductRequest(parameters));
+			var metadata = new
+			{
+				products.TotalCount,
+				products.PageSize,
+				products.CurrentPage,
+				products.TotalPages,
+				products.HasNext,
+				products.HasPrevious
+			};
+			Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+			return ApiResponse<PagedList<GetAllProductsDto>>.Success(products);
 		}
 
 
@@ -33,8 +47,38 @@ namespace NightMarket.API.Controllers.Catalog
 			return ApiResponse<GetAProductDto>.Success(product);
 		}
 
+		[HttpGet("/category")]
+		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProductsByCategory([FromQuery]int categoryId)
+		{
+			var product = await _mediator.Send(new GetProductsByCategoryRequest { CategoryId = categoryId });
+			return ApiResponse<List<GetAllProductsDto>>.Success(product);
+		}
 
-		[HttpPost]
+		[HttpGet("/promotion")]
+		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProductsByPromotion([FromQuery] int promotionId)
+		{
+			var product = await _mediator.Send(new GetProductsByPromotionRequest { PromotionId = promotionId });
+			return ApiResponse<List<GetAllProductsDto>>.Success(product);
+		}
+
+		[HttpGet("/not-in-category")]
+		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProductsNotInCategory([FromQuery]ProductParameters parameters)
+		{
+			var product = await _mediator.Send(new GetProductsNotInCategoryRequest { Parameters = parameters });
+			return ApiResponse<List<GetAllProductsDto>>.Success(product);
+		}
+
+
+		[HttpGet("/not-in-promotion")]
+		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProductsNotInPromotion([FromQuery] ProductParameters parameters)
+		{
+			var product = await _mediator.Send(new GetProductsNotInCategoryRequest { Parameters = parameters });
+			return ApiResponse<List<GetAllProductsDto>>.Success(product);
+		}
+
+
+
+		[HttpPost("Create")]
 		public async Task<ActionResult<BaseCommandResponse>> CreateAProduct([FromBody] CreateAProductDto productDto)
 		{
 			var command = new CreateAProductRequest { ProductDto = productDto };
@@ -42,6 +86,7 @@ namespace NightMarket.API.Controllers.Catalog
 			return Ok(response);
 		}
 
+		
 
 		[HttpPut("/productId")]
 		public async Task<ActionResult<BaseCommandResponse>> UpdateAProduct([FromBody] UpdateAProductDto productDto)

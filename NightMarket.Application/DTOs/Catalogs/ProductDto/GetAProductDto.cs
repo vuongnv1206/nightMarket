@@ -1,4 +1,6 @@
-﻿using NightMarket.Application.DTOs.Common;
+﻿using NightMarket.Application.DTOs.Catalogs.ProductItemDto;
+using NightMarket.Application.DTOs.Catalogs.Variations;
+using NightMarket.Application.DTOs.Common;
 using NightMarket.Domain.Enums;
 using System;
 using System.Collections.Generic;
@@ -25,5 +27,13 @@ namespace NightMarket.Application.DTOs.Catalogs.Products
 		public int? BrandId { get; set; }
 		public ProductStatus Status { get; set; }
 		public DateTime? PublishDate { get; set; }
+
+		public DateTime DateCreated { get; set; }
+		public string CreatedBy { get; set; }
+		public DateTime? LastModifiedDate { get; set; }
+		public string? LastModifiedBy { get; set; }
+
+		public IEnumerable<GetAVariationDto> Variations { get; set; }
+		public IEnumerable<GetAProductItemDto> ProductItems { get; set; }
 	}
 }

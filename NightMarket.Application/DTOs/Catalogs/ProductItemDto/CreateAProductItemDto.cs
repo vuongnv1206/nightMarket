@@ -1,4 +1,4 @@
-﻿using NightMarket.Application.Features.ProductCombinations;
+﻿using NightMarket.Application.DTOs.Catalogs.ProductConfigurationDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,6 @@ namespace NightMarket.Application.DTOs.Catalogs.ProductItemDto
         public double Price { get; set; }
         public int? Stock { get; set; }
         public double? CompareAtPrice { get; set; }
-
         public IEnumerable<ProductCombinationDto> ProductCombinationDtos { get; set; }
     }
 }

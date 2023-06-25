@@ -31,6 +31,7 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public IEnumerable<ProductItems> ProductItems { get; set; }
 		public IEnumerable<ProductCategories> ProductCategories { get; set; }
 		public IEnumerable<Variations> Variations { get; set; }
+		public IEnumerable<ProductPromotions> ProductPromotions { get; set; }
 		public Brands Brand { get; set; }
 
 

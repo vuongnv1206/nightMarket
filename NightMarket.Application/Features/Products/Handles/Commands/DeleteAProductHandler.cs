@@ -24,11 +24,16 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
         public async Task<BaseCommandResponse> Handle(DeleteAProductRequest request, CancellationToken cancellationToken)
 		{
 			var response = new BaseCommandResponse();
-			var product = await _unitOfWork.CategoryRepository.GetByIdAsync(request.ProductId);
+			var product = await _unitOfWork.CategoryRepository.GetByIdAsync(request.ProductId,p => p.ProductCategories);
 
 			if (product == null) throw new NotFoundException(nameof(Domain.Entities.ProductBundles.Products), request.ProductId);
 
 			await _unitOfWork.CategoryRepository.DeleteAsync(product);
+
+
+			// Xóa các liên kết giữa sản phẩm và danh mục
+			await _unitOfWork.ProductCategoryRepository.DeleteRangeAsync(product.ProductCategories);
+
 			await _unitOfWork.Save();
 
 			response.IsSuccess = true;

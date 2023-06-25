@@ -19,9 +19,9 @@ namespace NightMarket.API.Controllers.Catalog
 
 
 		[HttpGet]
-		public async Task<ApiResponse<List<GetAllVariationDto>>> GetVariations()
+		public async Task<ApiResponse<List<GetAllVariationDto>>> GetVariationsOfProduct(int productId)
 		{
-			var variantions = await _mediator.Send(new GetAllVariationRequest());
+			var variantions = await _mediator.Send(new GetAllVariationRequest { ProductId = productId});
 			return ApiResponse<List<GetAllVariationDto>>.Success(variantions);
 		}
 

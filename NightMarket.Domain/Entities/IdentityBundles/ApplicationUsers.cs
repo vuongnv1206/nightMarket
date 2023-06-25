@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using NightMarket.Domain.Entities.Catalogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace NightMarket.Domain.Entities.IdentityBundles
         public DateTime? DateOfBirth { get; set; }
         public bool? Gender { get; set; }
         public string? CompanyName { get; set; }
-		public IEnumerable<UserAddresses> UserAddresses { get; set; }
+        public IEnumerable<Addresses> Addresses { get; set; }
+        public IEnumerable<UserPromotions> UserPromotions { get; set; }
 
-	}
+    }
 }

@@ -10,5 +10,6 @@ namespace NightMarket.Application.Features.Variations.Requests.Queries
 {
 	public class GetAllVariationRequest : IRequest<List<GetAllVariationDto>>
 	{
-	}
+        public int ProductId { get; set; }
+    }
 }

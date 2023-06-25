@@ -1,4 +1,5 @@
-﻿using NightMarket.Application.DTOs.Catalogs.Variations;
+﻿using NightMarket.Application.DTOs.Catalogs.ProductItemDto;
+using NightMarket.Application.DTOs.Catalogs.Variations;
 using NightMarket.Application.DTOs.Common;
 using NightMarket.Domain.Enums;
 using System;
@@ -28,6 +29,7 @@ namespace NightMarket.Application.DTOs.Catalogs.Products
 		public DateTime? PublishDate { get; set; }
 
         public IEnumerable<CreateAVariationDto>? VariationDtos { get; set; }
+        public IEnumerable<CreateAProductItemDto>? ProductItemDtos { get; set; }
 
     }
 }

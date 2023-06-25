@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace NightMarket.Application.Features.ProductItems.Requests.Commands
 {
-    public class CreateListProductItemRequest : IRequest<BaseCommandResponse>
+    public class CreateAProductItemRequest : IRequest<BaseCommandResponse>
 	{
-		public  IEnumerable<CreateAProductItemDto> ProductItemDtos { get; set; }
+		public  CreateAProductItemDto ProductItemDto { get; set; }
 	}
 }

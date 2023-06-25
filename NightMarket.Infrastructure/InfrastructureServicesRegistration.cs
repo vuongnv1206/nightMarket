@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NightMarket.Infrastructure.Logger.Services;
 using NightMarket.Infrastructure.MailKit.Models;
 using NightMarket.Infrastructure.MailKit.Services;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,12 @@ namespace NightMarket.Infrastructure
 
 			//Add config for required Email
 			services.Configure<IdentityOptions>(options => options.SignIn.RequireConfirmedEmail = true);
+
+
+			//Nlog
+			//LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+			services.AddSingleton<ILoggerManager, LoggerManager>();
+
 
 			return services;
 			

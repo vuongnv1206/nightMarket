@@ -3,6 +3,7 @@ using NightMarket.API.Middleware;
 using NightMarket.Application;
 using NightMarket.Infrastructure;
 using NightMarket.Persistence;
+using NLog;
 
 namespace NightMarket.API
 {
@@ -21,6 +22,9 @@ namespace NightMarket.API
 			// Add services to the container.
 
 			builder.Services.AddControllers();
+
+			
+
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 

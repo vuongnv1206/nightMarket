@@ -18,6 +18,6 @@ namespace NightMarket.Domain.Entities.IdentityBundles
         public string? State { get; set; }  //Bang
         public string? Country { get; set; }
         public int? ZipCode { get; set; }  // Ma buu dien
-		public IEnumerable<UserAddresses> UserAddresses { get; set; }
-	}
+        public ApplicationUsers User { get; set; }
+    }
 }

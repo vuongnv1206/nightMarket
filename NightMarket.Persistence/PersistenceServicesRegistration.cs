@@ -1,8 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NightMarket.Application.Extensions;
 using NightMarket.Application.Interfaces.Persistence;
 using NightMarket.Application.Interfaces.Persistence.Catalog;
+using NightMarket.Domain.Entities.ProductBundles;
 using NightMarket.Persistence.Repositories.Persisence;
 using NightMarket.Persistence.Repositories.Persisence.Catalog;
 using System;
@@ -28,11 +30,13 @@ namespace NightMarket.Persistence
 
 			services.AddScoped<IProductRepository, ProductRepository>();
 			services.AddScoped<IVariationRepository, VariationRepository>();
+			services.AddScoped<IVariationOptionRepository, VariationOptionRepository>();
 			services.AddScoped<ICategoryRepository, CategoryRepository>();
-			
+			services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+			services.AddScoped<IProductCombinationRepository, ProductCombinationRepository>();
 
-
-
+			services.AddScoped<ISortHelper<Categories>, SortHelper<Categories>>();
+			services.AddScoped<ISortHelper<Products>, SortHelper<Products>>();
 
 			services.AddScoped<IUnitOfWork, UnitOfWork>();
 
