@@ -1,5 +1,5 @@
 ﻿using NightMarket.Application.Helpers;
-using NightMarket.Application.Models.Parameters;
+using NightMarket.Application.Parameters;
 using NightMarket.Domain.Entities.ProductBundles;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,6 @@ namespace NightMarket.Application.Interfaces.Persistence.Catalog
 		Task<List<Products>> GetProductsByCategory(int categoryId);
 
 		Task<Products> GetProductByIdAsync(int productId);
-
 
 		Task<List<Products>> GetProductsNotInPromotion(ProductParameters parameters);
 

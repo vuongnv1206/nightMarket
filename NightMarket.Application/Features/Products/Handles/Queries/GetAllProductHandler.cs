@@ -4,12 +4,7 @@ using NightMarket.Application.DTOs.Catalogs.Products;
 using NightMarket.Application.Features.Products.Requests.Queries;
 using NightMarket.Application.Helpers;
 using NightMarket.Application.Interfaces.Persistence.Catalog;
-using NightMarket.Application.Models.Parameters.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NightMarket.Application.Features.Products.Handles.Queries
 {

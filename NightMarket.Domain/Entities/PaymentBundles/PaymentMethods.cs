@@ -10,7 +10,7 @@ namespace NightMarket.Domain.Entities.PaymentBundles
 	public class PaymentMethods : BaseDomainEntity
 	{
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
     }
 }

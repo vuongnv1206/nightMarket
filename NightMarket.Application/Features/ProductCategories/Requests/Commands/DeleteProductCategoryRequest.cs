@@ -11,6 +11,6 @@ namespace NightMarket.Application.Features.ProductCategories.Requests.Commands
 {
 	public class DeleteProductCategoryRequest : IRequest<BaseCommandResponse>
 	{
-        public ProductCategoryDto ProductCategoryDto { get; set; }
+        public GetProductCategoryDto ProductCategoryDto { get; set; }
     }
 }

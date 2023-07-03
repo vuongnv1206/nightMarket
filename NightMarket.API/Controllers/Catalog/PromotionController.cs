@@ -7,14 +7,14 @@ using NightMarket.Application.Features.Categories.Requests.Queries;
 using NightMarket.Application.Features.Promotions.Requests.Commands;
 using NightMarket.Application.Features.Promotions.Requests.Queries;
 using NightMarket.Application.Helpers;
-using NightMarket.Application.Models.Parameters;
+using NightMarket.Application.Parameters;
 using NightMarket.Application.Responses;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace NightMarket.API.Controllers.Catalog
 {
-	[Route("api/[controller]")]
+    [Route("api/[controller]")]
 	[ApiController]
 	public class PromotionController : BaseApiController
 	{

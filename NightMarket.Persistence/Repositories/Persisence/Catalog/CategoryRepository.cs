@@ -1,25 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NightMarket.Application.DTOs.Catalogs.Categories;
 using NightMarket.Application.Extensions;
 using NightMarket.Application.Helpers;
-using NightMarket.Application.Interfaces.Persistence;
 using NightMarket.Application.Interfaces.Persistence.Catalog;
-using NightMarket.Application.Models.Parameters;
-using NightMarket.Application.Models.Parameters.Common;
+using NightMarket.Application.Parameters;
 using NightMarket.Domain.Entities.ProductBundles;
-using NightMarket.Domain.Entities.ShoppingBundles;
 using NightMarket.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Dynamic.Core;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NightMarket.Persistence.Repositories.Persisence.Catalog
 {
-	public class CategoryRepository : GenericRepository<Categories>, ICategoryRepository
+    public class CategoryRepository : GenericRepository<Categories>, ICategoryRepository
 	{
 		private readonly ISortHelper<Categories> _sortHelper;
 		private readonly ApplicationDbContext _context;
@@ -133,9 +124,10 @@ namespace NightMarket.Persistence.Repositories.Persisence.Catalog
 
 		public async Task<List<Categories>> GetCategoriesNotInProduct(CategoryParameters parameters)
 		{
-			var items = _context.Categories.Include(x => x.ProductCategories).Where(p => p.DeleteAt == null).ToList();
+			var items = _context.Categories.Include(x => x.ProductCategories.Where(pc => pc.DeleteAt == null)).Where(p => p.DeleteAt == null)
+						   .ToList();
 
-			items = items.Where(c => _context.ProductCategories
+			items = items.Where(c => c.ProductCategories
 										.Any(pc => pc.ProductId != parameters.ObjectId && pc.CategoryId != c.Id))
 										.ToList();
 
@@ -154,9 +146,9 @@ namespace NightMarket.Persistence.Repositories.Persisence.Catalog
 
 		public async Task<List<Categories>> GetCategoriesNotInPromotion(CategoryParameters parameters)
 		{
-			var items = _context.Categories.Include(x => x.CategoryPromotions).Where(p => p.DeleteAt == null).ToList();
+			var items = _context.Categories.Include(x => x.CategoryPromotions.Where(cp => cp.DeleteAt == null)).Where(p => p.DeleteAt == null).ToList();
 
-			items = items.Where(c => _context.CategoryPromotions
+			items = items.Where(c => c.CategoryPromotions
 										.Any(pc => pc.PromotionId != parameters.ObjectId && pc.CategoryId != c.Id))
 										.ToList();
 
@@ -175,7 +167,7 @@ namespace NightMarket.Persistence.Repositories.Persisence.Catalog
 
 		public async Task<List<Categories>> GetCategoriesByPromotion(int promotionId)
 		{
-			var categories = _context.Categories.Include(x => x.CategoryPromotions).Where(p => p.DeleteAt == null).ToList();
+			var categories = _context.Categories.Include(x => x.CategoryPromotions.Where(cp => cp.DeleteAt == null)).Where(p => p.DeleteAt == null).ToList();
 
 			categories = categories
 			.Where(p => p.CategoryPromotions.Any(pc => pc.PromotionId == promotionId))

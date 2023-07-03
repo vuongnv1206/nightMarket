@@ -28,7 +28,7 @@ namespace NightMarket.Infrastructure
 
 
 			//Nlog
-			//LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+			LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 			services.AddSingleton<ILoggerManager, LoggerManager>();
 
 

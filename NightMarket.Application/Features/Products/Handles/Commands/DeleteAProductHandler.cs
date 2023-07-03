@@ -24,7 +24,7 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
         public async Task<BaseCommandResponse> Handle(DeleteAProductRequest request, CancellationToken cancellationToken)
 		{
 			var response = new BaseCommandResponse();
-			var product = await _unitOfWork.CategoryRepository.GetByIdAsync(request.ProductId,p => p.ProductCategories);
+			var product = await _unitOfWork.CategoryRepository.GetByIdAsync(request.ProductId,p => p.ProductCategories.Where(pc => pc.DeleteAt == null));
 
 			if (product == null) throw new NotFoundException(nameof(Domain.Entities.ProductBundles.Products), request.ProductId);
 

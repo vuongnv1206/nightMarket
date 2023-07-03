@@ -1,5 +1,6 @@
 ﻿using NightMarket.Domain.Common;
 using NightMarket.Domain.Entities.Catalogs;
+using NightMarket.Domain.Entities.ShoppingBundles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public bool? TrackInventory { get; set; }
         public Products Product { get; set; }
 		public IEnumerable<ProductCombinations> ProductCombinations { get; set; }
+        public IEnumerable<CartItems> CartItems { get; set; }
+		public IEnumerable<OrderLines> OrderLines { get; set; }
 	}
 }
