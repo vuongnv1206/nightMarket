@@ -12,7 +12,7 @@ namespace NightMarket.Application.Responses
 	{
 		public bool IsSuccess { get; set; }
 		public string? Message { get; set; }
-		public int?StatusCode { get; set; }
+		public int? StatusCode { get; set; }
 
 		protected ApiResponseBase(bool isSuccess, string? message, int? statusCode)
 		{

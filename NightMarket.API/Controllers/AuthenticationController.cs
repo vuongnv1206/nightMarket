@@ -30,7 +30,7 @@ namespace NightMarket.API.Controllers
 		private readonly IEmailService _emailService;
 		private readonly SignInManager<ApplicationUsers> _signInManager;
 
-		public AuthenticationController(IMediator mediator, IMapper mapper,UserManager<ApplicationUsers> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,SignInManager<ApplicationUsers> signInManager,IEmailService emailService) : base(mediator, mapper)
+		public AuthenticationController(IMediator mediator,UserManager<ApplicationUsers> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,SignInManager<ApplicationUsers> signInManager,IEmailService emailService) : base(mediator)
 		{
 			_configuration = configuration;
 			_userManager = userManager;
@@ -114,18 +114,6 @@ namespace NightMarket.API.Controllers
 			//Checking the password
 			if (user != null && await _userManager.CheckPasswordAsync(user, loginModel.Password))
 			{
-
-				//if (user.TwoFactorEnabled)
-				//{
-				//    await _signInManager.SignOutAsync();
-				//    await _signInManager.PasswordSignInAsync(user, loginModel.Password, false, true);
-				//    var token = await _userManager.GenerateTwoFactorTokenAsync(user, "Email");
-				//    var message = new Message(new string[] { user.Email! }, "OTP confirmation !", token);
-				//    _emailService.SendEmail(message);
-				//    return StatusCode(StatusCodes.Status200OK,
-				//       new Response { Status = "Success", Message = $"We have sent an OTP to your Email {user.Email}!" });
-				//}
-
 				//Claimlist creation
 				var authClaims = new List<Claim>
 					{	

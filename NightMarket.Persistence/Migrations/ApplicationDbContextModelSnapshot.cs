@@ -386,7 +386,6 @@ namespace NightMarket.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastModifiedBy")
@@ -399,7 +398,7 @@ namespace NightMarket.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ParentId")
+                    b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -490,6 +489,44 @@ namespace NightMarket.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Coupons");
+                });
+
+            modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.ProductCategories", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.ProductConfigurations", b =>
@@ -626,7 +663,7 @@ namespace NightMarket.Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BrandId")
+                    b.Property<int?>("BrandId")
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
@@ -642,6 +679,9 @@ namespace NightMarket.Persistence.Migrations
                     b.Property<DateTime?>("DeleteAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -649,7 +689,6 @@ namespace NightMarket.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LongDesc")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -657,7 +696,6 @@ namespace NightMarket.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ShortDesc")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
@@ -666,8 +704,6 @@ namespace NightMarket.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -926,6 +962,25 @@ namespace NightMarket.Persistence.Migrations
                     b.Navigation("Promotion");
                 });
 
+            modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.ProductCategories", b =>
+                {
+                    b.HasOne("NightMarket.Domain.Entities.ProductBundles.Categories", "Category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NightMarket.Domain.Entities.ProductBundles.Products", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.ProductConfigurations", b =>
                 {
                     b.HasOne("NightMarket.Domain.Entities.ProductBundles.ProductItems", "ProductItem")
@@ -960,19 +1015,9 @@ namespace NightMarket.Persistence.Migrations
                 {
                     b.HasOne("NightMarket.Domain.Entities.Brands", "Brand")
                         .WithMany("Products")
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("NightMarket.Domain.Entities.ProductBundles.Categories", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BrandId");
 
                     b.Navigation("Brand");
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.VariationOptions", b =>
@@ -1016,7 +1061,7 @@ namespace NightMarket.Persistence.Migrations
                 {
                     b.Navigation("CategoryPromotions");
 
-                    b.Navigation("Products");
+                    b.Navigation("ProductCategories");
 
                     b.Navigation("Variations");
                 });
@@ -1028,6 +1073,8 @@ namespace NightMarket.Persistence.Migrations
 
             modelBuilder.Entity("NightMarket.Domain.Entities.ProductBundles.Products", b =>
                 {
+                    b.Navigation("ProductCategories");
+
                     b.Navigation("ProductItems");
                 });
 

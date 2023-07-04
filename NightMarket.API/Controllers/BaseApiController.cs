@@ -10,11 +10,9 @@ namespace NightMarket.API.Controllers
 	public class BaseApiController : ControllerBase
 	{
 		public readonly IMediator _mediator;
-		public readonly IMapper _mapper;
-        public BaseApiController(IMediator mediator,IMapper mapper)
+        public BaseApiController(IMediator mediator)
         {
 			_mediator = mediator;
-			_mapper = mapper;
         }
     }
 }

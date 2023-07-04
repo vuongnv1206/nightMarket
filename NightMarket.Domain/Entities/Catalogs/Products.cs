@@ -11,14 +11,15 @@ namespace NightMarket.Domain.Entities.ProductBundles
     public class Products : BaseDomainEntity
     {
         public string Name { get; set; }
-        public string ShortDesc { get; set; }
-        public string LongDesc { get; set; }
+        public string? ShortDesc { get; set; }
+        public string? LongDesc { get; set; }
+        public string? Image { get; set; }
         public int CategoryId { get; set; }
-        public int BrandId { get; set; }
+        public int? BrandId { get; set; }
         public ProductStatus Status { get; set; }
         public IEnumerable<ProductItems> ProductItems { get; set; }
-        public Categories Category { get; set; }
-        public Brands Brand { get; set; }
+		public IEnumerable<ProductCategories> ProductCategories { get; set; }
+		public Brands Brand { get; set; }
 
     }
 }
