@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using NightMarket.Domain.Entities.Catalogs;
+using NightMarket.Domain.Entities.ShoppingBundles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace NightMarket.Domain.Entities.IdentityBundles
         public string? CompanyName { get; set; }
         public IEnumerable<Addresses> Addresses { get; set; }
         public IEnumerable<UserPromotions> UserPromotions { get; set; }
+        public Carts Cart { get; set; }
 
     }
 }

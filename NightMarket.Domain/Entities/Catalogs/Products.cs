@@ -1,5 +1,6 @@
 ﻿using NightMarket.Domain.Common;
 using NightMarket.Domain.Entities.Catalogs;
+using NightMarket.Domain.Entities.ShoppingBundles;
 using NightMarket.Domain.Enums;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,10 @@ namespace NightMarket.Domain.Entities.ProductBundles
 		public IEnumerable<ProductCategories> ProductCategories { get; set; }
 		public IEnumerable<Variations> Variations { get; set; }
 		public IEnumerable<ProductPromotions> ProductPromotions { get; set; }
-		public Brands Brand { get; set; }
+
+		public IEnumerable<CartItems> CartItems { get; set; }
+        public IEnumerable<OrderLines> OrderLines { get; set; }
+        public Brands Brand { get; set; }
 
 
 

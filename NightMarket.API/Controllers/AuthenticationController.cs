@@ -29,14 +29,16 @@ namespace NightMarket.API.Controllers
 		private readonly IConfiguration _configuration;
 		private readonly IEmailService _emailService;
 		private readonly SignInManager<ApplicationUsers> _signInManager;
+		private readonly IMapper _mapper;
 
-		public AuthenticationController(IMediator mediator,UserManager<ApplicationUsers> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,SignInManager<ApplicationUsers> signInManager,IEmailService emailService) : base(mediator)
+		public AuthenticationController(IMapper mapper,IMediator mediator,UserManager<ApplicationUsers> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration,SignInManager<ApplicationUsers> signInManager,IEmailService emailService) : base(mediator)
 		{
 			_configuration = configuration;
 			_userManager = userManager;
 			_roleManager = roleManager;
 			_signInManager = signInManager;
 			_emailService = emailService;
+			_mapper = mapper;
 		}
 		
 		[HttpPost("Register")]
@@ -253,6 +255,84 @@ namespace NightMarket.API.Controllers
 			await _signInManager.SignOutAsync();
 			return StatusCode(StatusCodes.Status400BadRequest,
 					  new  { Status = "Success", Message = $"Logout successfully!" });
+		}
+
+
+		[HttpPost("signin-google")]
+
+		public IActionResult ExternalLogin(string provider, string returnUrl = null)
+		{
+			var redirectUrl = Url.Action(nameof(ExternalLoginCallback), "Authentication", new { returnUrl });
+			var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+			return Challenge(properties, provider);
+		}
+
+		[HttpGet("ExternalLoginCallback")]
+		public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null)
+		{
+			var info = await _signInManager.GetExternalLoginInfoAsync();
+			if (info == null)
+			{
+				return RedirectToAction(nameof(Login));
+			}
+
+			var signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+			if (signInResult.Succeeded)
+			{
+				return Ok(new { returnUrl });
+			}
+			if (signInResult.IsLockedOut)
+			{
+				return RedirectToAction(nameof(ForgotPassword));
+			}
+			else
+			{
+				var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+				return Ok(new { returnUrl, provider = info.LoginProvider, email });
+			}
+		}
+
+
+		[HttpPost("ExternalLoginConfirmation")]
+
+		public async Task<IActionResult> ExternalLoginConfirmation(ExternalLoginModel model, string returnUrl = null)
+		{
+
+			if (!ModelState.IsValid)
+				return BadRequest(ModelState);
+
+			var info = await _signInManager.GetExternalLoginInfoAsync();
+			
+
+			var user = await _userManager.FindByEmailAsync(model.Email);
+			IdentityResult result;
+
+			if (user != null)
+			{
+				result = await _userManager.AddLoginAsync(user, info);
+				if (result.Succeeded)
+				{
+					await _signInManager.SignInAsync(user, isPersistent: false);
+					return Ok(new { returnUrl });
+				}
+			}
+			else
+			{
+				model.Principal = info.Principal;
+				user = _mapper.Map<ApplicationUsers>(model);
+				result = await _userManager.CreateAsync(user);
+				if (result.Succeeded)
+				{
+					result = await _userManager.AddLoginAsync(user, info);
+					if (result.Succeeded)
+					{
+						//TODO: Send an emal for the email confirmation and add a default role as in the Register action
+						await _signInManager.SignInAsync(user, isPersistent: false);
+						return Ok(new { returnUrl });
+					}
+				}
+			}
+			return BadRequest(result.Errors);
 		}
 	}
 }

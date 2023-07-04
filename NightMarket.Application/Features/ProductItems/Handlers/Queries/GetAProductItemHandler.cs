@@ -22,7 +22,7 @@ namespace NightMarket.Application.Features.ProductItems.Handlers.Queries
         }
         public async Task<GetAProductItemDto> Handle(GetAProductItemRequest request, CancellationToken cancellationToken)
 		{
-			var productItem = await _unitOfWork.ProductItemRepository.GetByIdAsync(request.ProductItemId);
+			var productItem = await _unitOfWork.ProductItemRepository.GetByIdAsync(request.ProductItemId,pi => pi.ProductCombinations);
 			return _mapper.Map<GetAProductItemDto>(productItem);
 		}
 	}

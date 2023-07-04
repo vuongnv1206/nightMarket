@@ -5,7 +5,9 @@ using NightMarket.Domain.Common;
 using NightMarket.Domain.Entities;
 using NightMarket.Domain.Entities.Catalogs;
 using NightMarket.Domain.Entities.IdentityBundles;
+using NightMarket.Domain.Entities.PaymentBundles;
 using NightMarket.Domain.Entities.ProductBundles;
+using NightMarket.Domain.Entities.ShoppingBundles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,17 +57,20 @@ namespace NightMarket.Persistence
 		public DbSet<Variations> Variations { get; set; }
 		public DbSet<Brands> Brands { get; set; }
 		public DbSet<Suppliers> Suppliers { get; set; }
-
 		public DbSet<ProductCategories> ProductCategories { get; set; }
-
         public DbSet<ProductCombinations> ProductCombinations { get; set; }
-
         public DbSet<UserPromotions> UserPromotions { get; set; }
-
 		public DbSet<ProductPromotions> ProductPromotions { get; set; }
 
-
-        //Others
+        //Shopping
+        public DbSet<Carts> Carts { get; set; }
+        public DbSet<CartItems> CartItems { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<OrderLines> OrderLines { get; set; }
+        public DbSet<ShippingMethods> ShippingMethods { get; set; }
+        public DbSet<UserReviews> UserReviews { get; set; }
+        public DbSet<PaymentMethods> PaymentMethods { get; set; }
+        public DbSet<Payments> Payments { get; set; }
 
 
 

@@ -24,7 +24,10 @@ namespace NightMarket.Application.Features.Promotions.Handles.Commands
         public async Task<BaseCommandResponse> Handle(DeleteAPromotionRequest request, CancellationToken cancellationToken)
 		{
 			var response = new BaseCommandResponse();
-			var promotion = await _unitOfWork.PromotionRepository.GetByIdAsync(request.PromotionId, x => x.CategoryPromotions,x => x.ProductPromotions,x => x.UserPromotions);
+			var promotion = await _unitOfWork.PromotionRepository.GetByIdAsync(request.PromotionId,
+				x => x.CategoryPromotions.Where(cp => cp.DeleteAt == null),
+				x => x.ProductPromotions.Where(pp => pp.DeleteAt == null),
+				x => x.UserPromotions.Where(up => up.DeleteAt == null));
 
 			if (promotion == null) throw new NotFoundException(nameof(Domain.Entities.ProductBundles.Promotions), request.PromotionId);
 

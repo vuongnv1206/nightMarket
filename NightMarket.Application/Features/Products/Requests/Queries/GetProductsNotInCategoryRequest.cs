@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using NightMarket.Application.DTOs.Catalogs.Products;
-using NightMarket.Application.Models.Parameters;
+using NightMarket.Application.Parameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;

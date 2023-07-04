@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using NightMarket.Application.Extensions;
 using NightMarket.Application.Interfaces.Persistence.Catalog;
+using NightMarket.Application.Interfaces.Persistence.Shopping;
 using NightMarket.Domain.Entities.ProductBundles;
 
 namespace NightMarket.Application.Interfaces.Persistence
 {
     public interface IUnitOfWork : IDisposable
-	{
+	{	
+		//Catalog
 		IProductRepository ProductRepository { get; }
 		IVariationRepository VariationRepository { get; }
 
@@ -26,6 +28,14 @@ namespace NightMarket.Application.Interfaces.Persistence
 		IProductPromotionRepository ProductPromotionRepository { get; }
 		ICategoryPromotionRepository CategoryPromotionRepository { get; }
 		IUserPromotionRepository UserPromotionRepository { get; }
+
+		//Shopping
+		ICartRepository CartRepository { get; }
+		ICartItemRepository CartItemRepository { get; }
+		IOrderRepository OrderRepository { get; }
+		IOrderLineRepository OrderLineRepository { get; }
+		IShippingMethodRepository ShippingMethodRepository { get; }
+		IUserReviewRepository UserReviewRepository { get; }
 		Task Save();
 	}
 }

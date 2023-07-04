@@ -5,6 +5,7 @@ using NightMarket.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
@@ -72,10 +73,6 @@ namespace NightMarket.Persistence.Repositories.Persisence
 				query = query.Include(includeExpression);
 			}
 
-			// Thay đổi ở đây: sử dụng ThenInclude cho các truy vấn sâu hơn
-			var includePaths = GetIncludePaths(includes);
-			query = includePaths.Aggregate(query, (current, path) => current.Include(path));
-
 			var entity = await query.FirstOrDefaultAsync(e => e.Id.Equals(id));
 
 			if (entity != null && entity.DeleteAt != null)
@@ -86,17 +83,6 @@ namespace NightMarket.Persistence.Repositories.Persisence
 			return entity;
 		}
 
-		private List<string> GetIncludePaths(Expression<Func<T, object>>[] includes)
-		{
-			var includePaths = new List<string>();
-			foreach (var includeExpression in includes)
-			{
-				var memberExpression = includeExpression.Body as MemberExpression;
-				var propertyInfo = memberExpression?.Member as PropertyInfo;
-				includePaths.Add(propertyInfo?.Name);
-			}
-			return includePaths;
-		}
 
 
 		public async Task<List<T>> ListAsync()
@@ -109,16 +95,12 @@ namespace NightMarket.Persistence.Repositories.Persisence
 		{
 			var query = _dbContext.Set<T>().Where(e => e.DeleteAt == null);
 
-			foreach (var includeExpression in includes)
-			{
-				query = query.Include(includeExpression);
-			}
-
-			return await query.ToListAsync();
+            foreach (var includeExpression in includes)
+            {
+                query = query.Include(includeExpression);
+            }
+            return await query.ToListAsync();
 		}
-
-		
-
 
 		public async Task<int> SaveChangesAsync()
         {

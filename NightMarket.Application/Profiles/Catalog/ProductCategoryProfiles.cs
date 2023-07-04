@@ -14,7 +14,7 @@ namespace NightMarket.Application.Profiles.Catalog
 	{
         public ProductCategoryProfiles()
         {
-			CreateMap<ProductCategories, ProductCategoryDto>().ReverseMap();
+			CreateMap<ProductCategories, GetProductCategoryDto>().ReverseMap();
 		}
     }
 }

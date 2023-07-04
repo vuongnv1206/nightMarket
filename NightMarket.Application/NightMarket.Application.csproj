@@ -17,7 +17,11 @@
 
   <ItemGroup>
     <Folder Include="Constants\" />
-    <Folder Include="DTOs\Catalogs\ProductCombinationDto\" />
+    <Folder Include="DTOs\Identity\UserDto\Validators\" />
+    <Folder Include="Features\ShoppingCarts\CartItems\Handlers\Queries\" />
+    <Folder Include="Features\ShoppingCarts\CartItems\Requests\Queries\" />
+    <Folder Include="Features\ShoppingCarts\Carts\Handlers\Commands\" />
+    <Folder Include="Features\ShoppingCarts\Carts\Requests\Commands\" />
     <Folder Include="Features\Coupons\Handlers\Commands\" />
     <Folder Include="Features\Coupons\Handlers\Queries\" />
     <Folder Include="Features\Coupons\Requests\Commands\" />
@@ -28,7 +32,12 @@
     <Folder Include="Features\ProductCombinations\Handlers\Queries\" />
     <Folder Include="Features\ProductCombinations\Requests\Commands\" />
     <Folder Include="Features\ProductCombinations\Requests\Queries\" />
+    <Folder Include="Features\ShoppingCarts\OrderLines\Handlers\Commands\" />
+    <Folder Include="Features\ShoppingCarts\OrderLines\Handlers\Queries\" />
+    <Folder Include="Features\ShoppingCarts\OrderLines\Request\Commands\" />
+    <Folder Include="Features\ShoppingCarts\OrderLines\Request\Queries\" />
     <Folder Include="Interfaces\Infrastructure\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
   <ItemGroup>

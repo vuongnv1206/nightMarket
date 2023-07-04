@@ -6,7 +6,7 @@ using NightMarket.Application.DTOs.Catalogs.Products;
 using NightMarket.Application.Features.Products.Requests.Commands;
 using NightMarket.Application.Features.Products.Requests.Queries;
 using NightMarket.Application.Helpers;
-using NightMarket.Application.Models.Parameters;
+using NightMarket.Application.Parameters;
 using NightMarket.Application.Responses;
 
 
@@ -61,7 +61,7 @@ namespace NightMarket.API.Controllers.Catalog
 			return ApiResponse<List<GetAllProductsDto>>.Success(product);
 		}
 
-		[HttpGet("/not-in-category")]
+		[HttpGet("/GetProductsNotInCategory")]
 		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProductsNotInCategory([FromQuery]ProductParameters parameters)
 		{
 			var product = await _mediator.Send(new GetProductsNotInCategoryRequest { Parameters = parameters });
@@ -69,7 +69,7 @@ namespace NightMarket.API.Controllers.Catalog
 		}
 
 
-		[HttpGet("/not-in-promotion")]
+		[HttpGet("/GetProductsNotInPromotion")]
 		public async Task<ApiResponse<List<GetAllProductsDto>>> GetProductsNotInPromotion([FromQuery] ProductParameters parameters)
 		{
 			var product = await _mediator.Send(new GetProductsNotInCategoryRequest { Parameters = parameters });

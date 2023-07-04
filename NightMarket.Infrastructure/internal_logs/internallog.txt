@@ -1,0 +1,731 @@
+2023-07-03 00:12:08.5089 Info Message Template Auto Format enabled
+2023-07-03 00:12:08.6274 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 00:12:08.6274 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 00:12:08.6274 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 00:12:08.6274 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 00:12:08.6399 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 00:12:08.6399 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 00:12:08.6399 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 00:12:08.6399 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 00:12:08.6399 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 00:12:08.6399 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 00:12:08.6399 Trace ParseRulesElement
+2023-07-03 00:12:08.6632 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 00:12:08.6632 Debug --- NLog configuration dump ---
+2023-07-03 00:12:08.6632 Debug Targets:
+2023-07-03 00:12:08.6632 Debug FileTarget(Name=logfile)
+2023-07-03 00:12:08.6632 Debug Rules:
+2023-07-03 00:12:08.6697 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 00:12:08.6697 Debug --- End of NLog configuration dump ---
+2023-07-03 00:12:08.6697 Trace FindReachableObject<System.Object>:
+2023-07-03 00:12:08.6697 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 00:12:08.6697 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 00:12:08.6697 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 00:12:08.6697 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 00:12:08.6697 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 00:12:08.6697 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 00:12:08.6697 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.6697 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 00:12:08.6697 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.6697 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 00:12:08.6697 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 00:12:08.6697 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 00:12:08.6697 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 00:12:08.6697 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.6697 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 00:12:08.6697 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.6697 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 00:12:08.6697 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 00:12:08.6697 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 00:12:08.6866 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 00:12:08.6866 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 00:12:08.6866 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 00:12:08.6866 Trace Initializing Layout Renderer: ${message}
+2023-07-03 00:12:08.6866 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 00:12:08.6866 Trace Initializing Layout Renderer: ${level}
+2023-07-03 00:12:08.6866 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 00:12:08.6866 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 00:12:08.6866 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 00:12:08.7017 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 00:12:08.7017 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 00:12:08.7017 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 00:12:08.7017 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 00:12:08.7017 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.7017 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 00:12:08.7017 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.7017 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 00:12:08.7017 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 00:12:08.7017 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 00:12:08.7017 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 00:12:08.7017 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 00:12:08.7017 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 00:12:08.7017 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 00:12:08.7017 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 00:12:08.7017 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.7017 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 00:12:08.7017 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 00:12:08.7017 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 00:12:08.7017 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 00:12:08.7017 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 00:12:08.7017 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 00:12:08.7017 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 00:12:08.7017 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 00:12:08.7017 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 00:12:17.8580 Debug Targets configured when LogLevel >= Debug for Logger: NightMarket.Infrastructure.Logger.Services.LoggerManager
+2023-07-03 00:12:17.8580 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Debug] => logfile
+2023-07-03 00:12:17.8580 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Info] => logfile
+2023-07-03 00:12:17.8580 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Warn] => logfile
+2023-07-03 00:12:17.8580 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Error] => logfile
+2023-07-03 00:12:17.8580 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Fatal] => logfile
+2023-07-03 00:12:17.8823 Debug FileTarget(Name=logfile): Preparing for new file: 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt'
+2023-07-03 00:12:17.8897 Debug FileTarget(Name=logfile): Creating file appender: 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt'
+2023-07-03 00:12:17.8897 Trace FileTarget(Name=logfile): Opening C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt with allowFileSharedWriting=False
+2023-07-03 00:12:17.8897 Debug FileTarget(Name=logfile): Failed to retrieve FileInfo.CreationTimeUtc from FileName: C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.Infrastructure\logs\2023-07-03_logfile.txt'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at NLog.Internal.FileAppenders.BaseFileAppender.UpdateCreationTime()
+2023-07-03 00:12:17.9580 Debug FileTarget(Name=logfile): DirectoryNotFoundException - Attempting to create directory for FileName: C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt
+2023-07-03 11:14:01.4821 Info Message Template Auto Format enabled
+2023-07-03 11:14:01.5751 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:14:01.5775 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 11:14:01.5775 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:14:01.5775 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 11:14:01.5775 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:14:01.5775 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 11:14:01.5775 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:14:01.5775 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 11:14:01.5775 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 11:14:01.5922 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 11:14:01.5922 Trace ParseRulesElement
+2023-07-03 11:14:01.6135 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 11:14:01.6135 Debug --- NLog configuration dump ---
+2023-07-03 11:14:01.6135 Debug Targets:
+2023-07-03 11:14:01.6135 Debug FileTarget(Name=logfile)
+2023-07-03 11:14:01.6135 Debug Rules:
+2023-07-03 11:14:01.6135 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 11:14:01.6135 Debug --- End of NLog configuration dump ---
+2023-07-03 11:14:01.6263 Trace FindReachableObject<System.Object>:
+2023-07-03 11:14:01.6263 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 11:14:01.6263 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 11:14:01.6263 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 11:14:01.6263 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 11:14:01.6263 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 11:14:01.6263 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:14:01.6263 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6263 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 11:14:01.6263 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6263 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 11:14:01.6263 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 11:14:01.6263 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:14:01.6263 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 11:14:01.6263 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6263 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 11:14:01.6263 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6263 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 11:14:01.6263 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 11:14:01.6263 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 11:14:01.6406 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 11:14:01.6406 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 11:14:01.6406 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 11:14:01.6406 Trace Initializing Layout Renderer: ${message}
+2023-07-03 11:14:01.6406 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:14:01.6406 Trace Initializing Layout Renderer: ${level}
+2023-07-03 11:14:01.6406 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:14:01.6406 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 11:14:01.6406 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 11:14:01.6565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:14:01.6565 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 11:14:01.6565 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:14:01.6565 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 11:14:01.6565 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6565 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 11:14:01.6565 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6565 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 11:14:01.6565 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:14:01.6565 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 11:14:01.6565 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:14:01.6565 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 11:14:01.6565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:14:01.6565 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 11:14:01.6565 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:14:01.6565 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6565 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 11:14:01.6565 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:14:01.6565 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 11:14:01.6565 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 11:14:01.6565 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 11:14:01.6565 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 11:14:01.6565 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 11:14:01.6565 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 11:14:01.6565 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 11:14:32.2100 Debug Targets configured when LogLevel >= Debug for Logger: NightMarket.Infrastructure.Logger.Services.LoggerManager
+2023-07-03 11:14:32.2100 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Debug] => logfile
+2023-07-03 11:14:32.2100 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Info] => logfile
+2023-07-03 11:14:32.2100 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Warn] => logfile
+2023-07-03 11:14:32.2100 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Error] => logfile
+2023-07-03 11:14:32.2100 Debug Logger NightMarket.Infrastructure.Logger.Services.LoggerManager [Fatal] => logfile
+2023-07-03 11:14:32.2348 Debug FileTarget(Name=logfile): Preparing for new file: 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt'
+2023-07-03 11:14:32.2348 Debug FileTarget(Name=logfile): Creating file appender: 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt'
+2023-07-03 11:14:32.2348 Trace FileTarget(Name=logfile): Opening C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/2023-07-03_logfile.txt with allowFileSharedWriting=False
+2023-07-03 11:19:06.0672 Info Message Template Auto Format enabled
+2023-07-03 11:19:06.1456 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:19:06.1456 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 11:19:06.1456 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:19:06.1456 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 11:19:06.1565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:19:06.1565 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 11:19:06.1565 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:19:06.1565 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 11:19:06.1565 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 11:19:06.1565 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 11:19:06.1565 Trace ParseRulesElement
+2023-07-03 11:19:06.1783 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 11:19:06.1783 Debug --- NLog configuration dump ---
+2023-07-03 11:19:06.1783 Debug Targets:
+2023-07-03 11:19:06.1783 Debug FileTarget(Name=logfile)
+2023-07-03 11:19:06.1783 Debug Rules:
+2023-07-03 11:19:06.1783 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 11:19:06.1783 Debug --- End of NLog configuration dump ---
+2023-07-03 11:19:06.1893 Trace FindReachableObject<System.Object>:
+2023-07-03 11:19:06.1893 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 11:19:06.1893 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 11:19:06.1893 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 11:19:06.1893 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 11:19:06.1893 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 11:19:06.1893 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:19:06.1893 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.1893 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 11:19:06.1893 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.1893 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 11:19:06.1893 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 11:19:06.1893 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:19:06.1893 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 11:19:06.1893 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.1893 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 11:19:06.1893 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.1893 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 11:19:06.1893 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 11:19:06.1893 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 11:19:06.2027 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 11:19:06.2027 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 11:19:06.2027 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 11:19:06.2027 Trace Initializing Layout Renderer: ${message}
+2023-07-03 11:19:06.2027 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:19:06.2027 Trace Initializing Layout Renderer: ${level}
+2023-07-03 11:19:06.2027 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:19:06.2027 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 11:19:06.2027 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 11:19:06.2027 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:19:06.2027 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 11:19:06.2027 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:19:06.2027 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 11:19:06.2027 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.2027 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 11:19:06.2027 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.2027 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 11:19:06.2182 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:19:06.2182 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 11:19:06.2182 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 11:19:06.2182 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 11:19:06.2182 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 11:19:06.2182 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 11:19:06.2182 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 11:19:06.2182 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.2182 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 11:19:06.2182 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 11:19:06.2182 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 11:19:06.2182 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 11:19:06.2182 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 11:19:06.2182 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 11:19:06.2182 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 11:19:06.2182 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 11:19:06.2182 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 11:20:25.7707 Info AppDomain Shutting down. LogFactory closing...
+2023-07-03 11:20:25.7707 Debug Stopping file watching for path 'C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API' filter 'nlog.config'
+2023-07-03 11:20:25.7707 Trace Flushing all 1 targets...
+2023-07-03 11:20:25.7819 Trace ForEachItemInParallel() 1 items
+2023-07-03 11:20:25.7979 Trace FileTarget(Name=logfile): FlushAsync
+2023-07-03 11:20:25.7979 Trace Continuation invoked: 
+2023-07-03 11:20:25.7979 Trace Parallel task completed. 0 items remaining
+2023-07-03 11:20:25.7979 Debug Flush completed
+2023-07-03 11:20:25.7979 Trace FileTarget(Name=logfile): FlushAsync Done
+2023-07-03 11:20:25.7979 Debug Closing logging configuration...
+2023-07-03 11:20:25.7979 Trace Closing FileTarget(Name=logfile)
+2023-07-03 11:20:25.7979 Debug FileTarget(Name=logfile): Closing...
+2023-07-03 11:20:25.7979 Debug FileTarget(Name=logfile): Closed.
+2023-07-03 11:20:25.7979 Trace Closing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 11:20:25.7979 Trace Closing Layout Renderer: ${literal}
+2023-07-03 11:20:25.7979 Trace Closing Layout Renderer: ${shortdate}
+2023-07-03 11:20:25.7979 Trace Closing Layout Renderer: ${literal}
+2023-07-03 11:20:25.7979 Trace Closing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 11:20:25.7979 Trace Closing Layout Renderer: ${longdate}
+2023-07-03 11:20:25.7979 Trace Closing Layout Renderer: ${literal}
+2023-07-03 11:20:25.7979 Trace Closing Layout Renderer: ${level}
+2023-07-03 11:20:25.8114 Trace Closing Layout Renderer: ${literal}
+2023-07-03 11:20:25.8114 Trace Closing Layout Renderer: ${message}
+2023-07-03 11:20:25.8114 Debug Finished closing logging configuration.
+2023-07-03 11:20:25.8114 Info LogFactory has been closed.
+2023-07-03 14:15:24.9499 Info Message Template Auto Format enabled
+2023-07-03 14:15:25.1445 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:15:25.1445 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:15:25.1445 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:15:25.1445 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:15:25.1606 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:15:25.1606 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:15:25.1606 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:15:25.1606 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:15:25.1606 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:15:25.1606 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:15:25.1606 Trace ParseRulesElement
+2023-07-03 14:15:25.2235 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 14:15:25.2235 Debug --- NLog configuration dump ---
+2023-07-03 14:15:25.2235 Debug Targets:
+2023-07-03 14:15:25.2362 Debug FileTarget(Name=logfile)
+2023-07-03 14:15:25.2362 Debug Rules:
+2023-07-03 14:15:25.2362 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 14:15:25.2362 Debug --- End of NLog configuration dump ---
+2023-07-03 14:15:25.2542 Trace FindReachableObject<System.Object>:
+2023-07-03 14:15:25.2542 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 14:15:25.2542 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 14:15:25.2685 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:15:25.2685 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:15:25.2685 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:15:25.2685 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:15:25.2685 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.2804 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:15:25.2804 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.2804 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:15:25.2804 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:15:25.2804 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:15:25.2804 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:15:25.2804 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.2804 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:15:25.2804 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.2804 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:15:25.2804 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 14:15:25.2804 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 14:15:25.2981 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 14:15:25.2981 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 14:15:25.3125 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${message}
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${level}
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 14:15:25.3125 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 14:15:25.3125 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:15:25.3125 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:15:25.3125 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:15:25.3125 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:15:25.3125 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.3125 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:15:25.3125 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.3125 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:15:25.3125 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 14:15:25.3269 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:15:25.3269 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 14:15:25.3269 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:15:25.3269 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:15:25.3269 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:15:25.3269 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.3269 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:15:25.3269 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:15:25.3269 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 14:15:25.3269 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 14:15:25.3269 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:15:25.3269 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:15:25.3269 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:15:25.3269 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 14:15:25.3269 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 14:46:28.2391 Info Message Template Auto Format enabled
+2023-07-03 14:46:28.3631 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:46:28.3631 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:46:28.3631 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:46:28.3631 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:46:28.3742 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:46:28.3742 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:46:28.3742 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:46:28.3742 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:46:28.3742 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:46:28.3742 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:46:28.3742 Trace ParseRulesElement
+2023-07-03 14:46:28.3994 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 14:46:28.3994 Debug --- NLog configuration dump ---
+2023-07-03 14:46:28.3994 Debug Targets:
+2023-07-03 14:46:28.3994 Debug FileTarget(Name=logfile)
+2023-07-03 14:46:28.3994 Debug Rules:
+2023-07-03 14:46:28.4071 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 14:46:28.4071 Debug --- End of NLog configuration dump ---
+2023-07-03 14:46:28.4071 Trace FindReachableObject<System.Object>:
+2023-07-03 14:46:28.4071 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 14:46:28.4071 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 14:46:28.4071 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:46:28.4071 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:46:28.4071 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:46:28.4071 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:46:28.4071 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4071 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:46:28.4071 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4071 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:46:28.4071 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:46:28.4071 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:46:28.4071 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:46:28.4071 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4071 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:46:28.4071 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4071 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:46:28.4205 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 14:46:28.4205 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 14:46:28.4205 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 14:46:28.4205 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 14:46:28.4205 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 14:46:28.4205 Trace Initializing Layout Renderer: ${message}
+2023-07-03 14:46:28.4205 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:46:28.4205 Trace Initializing Layout Renderer: ${level}
+2023-07-03 14:46:28.4205 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:46:28.4205 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 14:46:28.4205 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 14:46:28.4370 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:46:28.4370 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:46:28.4370 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:46:28.4370 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:46:28.4370 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4370 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:46:28.4370 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4370 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:46:28.4370 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:46:28.4370 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 14:46:28.4370 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:46:28.4370 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 14:46:28.4370 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:46:28.4370 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:46:28.4370 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:46:28.4370 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4370 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:46:28.4370 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:46:28.4370 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 14:46:28.4370 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 14:46:28.4370 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:46:28.4370 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:46:28.4370 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:46:28.4370 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 14:46:28.4370 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 14:46:51.8370 Info AppDomain Shutting down. LogFactory closing...
+2023-07-03 14:46:51.8370 Debug Stopping file watching for path 'C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API' filter 'nlog.config'
+2023-07-03 14:46:51.8451 Trace Flushing all 1 targets...
+2023-07-03 14:46:51.8451 Trace ForEachItemInParallel() 1 items
+2023-07-03 14:46:51.8451 Trace FileTarget(Name=logfile): FlushAsync
+2023-07-03 14:46:51.8451 Trace Continuation invoked: 
+2023-07-03 14:46:51.8451 Trace Parallel task completed. 0 items remaining
+2023-07-03 14:46:51.8451 Debug Flush completed
+2023-07-03 14:46:51.8451 Trace FileTarget(Name=logfile): FlushAsync Done
+2023-07-03 14:46:51.8582 Debug Closing logging configuration...
+2023-07-03 14:46:51.8582 Trace Closing FileTarget(Name=logfile)
+2023-07-03 14:46:51.8582 Debug FileTarget(Name=logfile): Closing...
+2023-07-03 14:46:51.8582 Debug FileTarget(Name=logfile): Closed.
+2023-07-03 14:46:51.8582 Trace Closing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${literal}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${shortdate}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${literal}
+2023-07-03 14:46:51.8582 Trace Closing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${longdate}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${literal}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${level}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${literal}
+2023-07-03 14:46:51.8582 Trace Closing Layout Renderer: ${message}
+2023-07-03 14:46:51.8582 Debug Finished closing logging configuration.
+2023-07-03 14:46:51.8582 Info LogFactory has been closed.
+2023-07-03 14:47:30.0811 Info Message Template Auto Format enabled
+2023-07-03 14:47:30.2402 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:47:30.2831 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:47:30.2955 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:47:30.2955 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:47:30.2955 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:47:30.2955 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:47:30.2955 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:47:30.3126 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:47:30.3126 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:47:30.3126 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:47:30.3126 Trace ParseRulesElement
+2023-07-03 14:47:30.3465 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 14:47:30.3465 Debug --- NLog configuration dump ---
+2023-07-03 14:47:30.3465 Debug Targets:
+2023-07-03 14:47:30.3465 Debug FileTarget(Name=logfile)
+2023-07-03 14:47:30.3465 Debug Rules:
+2023-07-03 14:47:30.3465 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 14:47:30.3465 Debug --- End of NLog configuration dump ---
+2023-07-03 14:47:30.3654 Trace FindReachableObject<System.Object>:
+2023-07-03 14:47:30.3654 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 14:47:30.3654 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 14:47:30.3654 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:47:30.3654 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:47:30.3734 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:47:30.3734 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:47:30.3734 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.3734 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:47:30.3734 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.3734 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:47:30.3734 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:47:30.3734 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:47:30.3734 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:47:30.3734 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.3734 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:47:30.3734 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.3734 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:47:30.3734 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 14:47:30.3734 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 14:47:30.3734 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 14:47:30.3895 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 14:47:30.3895 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 14:47:30.3895 Trace Initializing Layout Renderer: ${message}
+2023-07-03 14:47:30.3895 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:47:30.3895 Trace Initializing Layout Renderer: ${level}
+2023-07-03 14:47:30.3895 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:47:30.3895 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 14:47:30.3895 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 14:47:30.4052 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:47:30.4052 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:47:30.4052 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:47:30.4052 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:47:30.4052 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.4052 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:47:30.4052 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.4052 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:47:30.4052 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:47:30.4052 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 14:47:30.4052 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:47:30.4052 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 14:47:30.4052 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:47:30.4052 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:47:30.4052 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:47:30.4052 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.4052 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:47:30.4052 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:47:30.4052 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 14:47:30.4202 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 14:47:30.4202 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:47:30.4202 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:47:30.4202 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:47:30.4202 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 14:47:30.4202 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 14:49:37.8029 Info Message Template Auto Format enabled
+2023-07-03 14:49:37.8965 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:49:37.8965 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:49:37.8965 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:49:37.8965 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:49:37.9091 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:49:37.9091 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:49:37.9091 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:49:37.9091 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:49:37.9091 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:49:37.9091 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:49:37.9091 Trace ParseRulesElement
+2023-07-03 14:49:37.9500 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 14:49:37.9526 Debug --- NLog configuration dump ---
+2023-07-03 14:49:37.9526 Debug Targets:
+2023-07-03 14:49:37.9526 Debug FileTarget(Name=logfile)
+2023-07-03 14:49:37.9526 Debug Rules:
+2023-07-03 14:49:37.9526 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 14:49:37.9526 Debug --- End of NLog configuration dump ---
+2023-07-03 14:49:37.9680 Trace FindReachableObject<System.Object>:
+2023-07-03 14:49:37.9680 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 14:49:37.9680 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 14:49:37.9680 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:49:37.9680 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:49:37.9680 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:49:37.9680 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:49:37.9680 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:37.9680 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:49:37.9680 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:37.9680 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:49:37.9680 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:49:37.9680 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:49:37.9680 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:49:37.9680 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:37.9680 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:49:37.9680 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:37.9680 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:49:37.9680 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 14:49:37.9830 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 14:49:37.9830 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 14:49:37.9830 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 14:49:37.9830 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 14:49:37.9830 Trace Initializing Layout Renderer: ${message}
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${level}
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 14:49:37.9990 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 14:49:37.9990 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:49:37.9990 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:49:37.9990 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:49:37.9990 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:49:37.9990 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:37.9990 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:49:37.9990 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:37.9990 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 14:49:37.9990 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:49:37.9990 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 14:49:37.9990 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:49:38.0140 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:49:38.0140 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:49:38.0140 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:38.0140 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:49:38.0140 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:49:38.0140 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 14:49:38.0140 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 14:49:38.0140 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:49:38.0140 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:49:38.0140 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:49:38.0140 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 14:49:38.0140 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 14:59:33.9019 Info Message Template Auto Format enabled
+2023-07-03 14:59:34.0489 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:59:34.0489 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:59:34.0489 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:59:34.0778 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:59:34.0778 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:59:34.0778 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:59:34.0778 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:59:34.0778 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:59:34.0778 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:59:34.0778 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 14:59:34.0778 Trace ParseRulesElement
+2023-07-03 14:59:34.1304 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 14:59:34.1304 Debug --- NLog configuration dump ---
+2023-07-03 14:59:34.1396 Debug Targets:
+2023-07-03 14:59:34.1396 Debug FileTarget(Name=logfile)
+2023-07-03 14:59:34.1396 Debug Rules:
+2023-07-03 14:59:34.1396 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 14:59:34.1396 Debug --- End of NLog configuration dump ---
+2023-07-03 14:59:34.1546 Trace FindReachableObject<System.Object>:
+2023-07-03 14:59:34.1546 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 14:59:34.1546 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 14:59:34.1546 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:59:34.1546 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:59:34.1546 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:59:34.1546 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:59:34.1546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.1546 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:59:34.1546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.1546 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:59:34.1546 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:59:34.1546 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:59:34.1546 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:59:34.1546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.1546 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:59:34.1546 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.1546 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:59:34.1546 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 14:59:34.1546 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 14:59:34.1739 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 14:59:34.1739 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 14:59:34.1739 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 14:59:34.1871 Trace Initializing Layout Renderer: ${message}
+2023-07-03 14:59:34.1871 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:59:34.1871 Trace Initializing Layout Renderer: ${level}
+2023-07-03 14:59:34.1871 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:59:34.1871 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 14:59:34.1871 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 14:59:34.1871 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:59:34.1871 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 14:59:34.1871 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:59:34.1871 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 14:59:34.1871 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.1871 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 14:59:34.1871 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.1871 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 14:59:34.2025 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:59:34.2025 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 14:59:34.2025 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 14:59:34.2025 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 14:59:34.2025 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 14:59:34.2025 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 14:59:34.2025 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 14:59:34.2025 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.2025 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 14:59:34.2025 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 14:59:34.2025 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 14:59:34.2025 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 14:59:34.2025 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 14:59:34.2025 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 14:59:34.2025 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 14:59:34.2025 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 14:59:34.2025 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
+2023-07-03 15:08:24.9344 Info Message Template Auto Format enabled
+2023-07-03 15:08:25.0530 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 15:08:25.0530 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 15:08:25.0530 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 15:08:25.0530 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 15:08:25.0649 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 15:08:25.0649 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 15:08:25.0649 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 15:08:25.0649 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 15:08:25.0649 Debug Adding target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 15:08:25.0649 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-03 15:08:25.0649 Trace ParseRulesElement
+2023-07-03 15:08:25.0914 Debug Watching file-filter 'nlog.config' in directory: C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API
+2023-07-03 15:08:25.0930 Debug --- NLog configuration dump ---
+2023-07-03 15:08:25.0930 Debug Targets:
+2023-07-03 15:08:25.0930 Debug FileTarget(Name=logfile)
+2023-07-03 15:08:25.0930 Debug Rules:
+2023-07-03 15:08:25.0930 Debug logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]
+2023-07-03 15:08:25.0930 Debug --- End of NLog configuration dump ---
+2023-07-03 15:08:25.0930 Trace FindReachableObject<System.Object>:
+2023-07-03 15:08:25.0930 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Debug Info Warn Error Fatal ] writeTo: [ logfile ]'
+2023-07-03 15:08:25.0930 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic.IList`1[NLog.Targets.Target]
+2023-07-03 15:08:25.1095 Trace  Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 15:08:25.1095 Trace   Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 15:08:25.1095 Trace   Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 15:08:25.1095 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 15:08:25.1095 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1095 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 15:08:25.1095 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1095 Trace   Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 15:08:25.1095 Trace   Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 15:08:25.1095 Trace    Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 15:08:25.1095 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 15:08:25.1095 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1095 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 15:08:25.1095 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1095 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 15:08:25.1095 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic.IList`1[NLog.Config.LoggingRule]
+2023-07-03 15:08:25.1095 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic.IList`1[NLog.Filters.Filter]
+2023-07-03 15:08:25.1095 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\dell\Documents\NightMarket\NightMarket\NightMarket.API\nlog.config
+2023-07-03 15:08:25.1230 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2023-07-03 15:08:25.1230 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${message}
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${level}
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${longdate}
+2023-07-03 15:08:25.1230 Trace Initializing ${longdate} ${level:uppercase=true} ${message}
+2023-07-03 15:08:25.1230 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 15:08:25.1230 Trace Scanning SimpleLayout '${longdate} ${level:uppercase=true} ${message}'
+2023-07-03 15:08:25.1230 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 15:08:25.1230 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2023-07-03 15:08:25.1230 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1230 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2023-07-03 15:08:25.1230 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1230 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${shortdate}
+2023-07-03 15:08:25.1230 Trace Initializing Layout Renderer: ${literal}
+2023-07-03 15:08:25.1230 Trace Initializing C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt
+2023-07-03 15:08:25.1230 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2023-07-03 15:08:25.1230 Trace Scanning SimpleLayout 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt'
+2023-07-03 15:08:25.1230 Trace  Scanning Property LayoutRenderers 'NLog.LayoutRenderers.LayoutRenderer[]' System.Collections.Generic.IEnumerable`1[NLog.LayoutRenderers.LayoutRenderer]
+2023-07-03 15:08:25.1230 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1230 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2023-07-03 15:08:25.1393 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2023-07-03 15:08:25.1393 Trace Initializing FileTarget(Name=logfile)
+2023-07-03 15:08:25.1393 Trace FindReachableObject<NLog.Layouts.Layout>:
+2023-07-03 15:08:25.1393 Trace Scanning FileTarget 'FileTarget(Name=logfile)'
+2023-07-03 15:08:25.1393 Trace  Scanning Property FileName 'C:/Users/dell/Documents/NightMarket/NightMarket/NightMarket.Infrastructure/logs/${shortdate}_logfile.txt' NLog.Layouts.Layout
+2023-07-03 15:08:25.1393 Trace  Scanning Property Layout '${longdate} ${level:uppercase=true} ${message}' NLog.Layouts.Layout
+2023-07-03 15:08:25.1393 Trace FileTarget(Name=logfile) has 2 layouts
+2023-07-03 15:08:25.1393 Trace FileTarget(Name=logfile): Using appenderFactory: NLog.Internal.FileAppenders.SingleProcessFileAppender+Factory
