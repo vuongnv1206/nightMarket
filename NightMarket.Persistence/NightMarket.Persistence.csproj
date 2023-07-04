@@ -28,5 +28,10 @@
   <ItemGroup>
     <ProjectReference Include="..\NightMarket.Application\NightMarket.Application.csproj" />
   </ItemGroup>
+	
+  <ItemGroup>
+    <Folder Include="EntityConfigurations\IdentityBundles\" />
+    <Folder Include="EntityConfigurations\ProductBundles\" />
+  </ItemGroup>
 
 </Project>
