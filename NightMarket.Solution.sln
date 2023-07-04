@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D04900D-F469-4AE9-ACAE-CBD91DFDC2C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{837BA2FE-6C93-4AAD-8A36-200A69D988DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3B19B8C6-8134-4DA6-812A-DA5A44217F7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4057393A-E4EE-4FFC-BA4D-FE0A03579965}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NightMarket.API", "NightMarket.API\NightMarket.API.csproj", "{934ECF2C-3C5D-448F-8348-082561D326AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NightMarket.Application", "NightMarket.Application\NightMarket.Application.csproj", "{0A0B1936-AF9C-4D0F-978C-92216A75936D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NightMarket.Domain", "NightMarket.Domain\NightMarket.Domain.csproj", "{9C1DCA64-3CF5-4F1F-8E26-543849969430}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NightMarket.Infrastructure", "NightMarket.Infrastructure\NightMarket.Infrastructure.csproj", "{D9E573A7-C282-4376-A5A7-EE8D39AE7050}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NightMarket.Persistence", "NightMarket.Persistence\NightMarket.Persistence.csproj", "{F953C2E3-AD83-418C-BEBE-78ED01E08861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{934ECF2C-3C5D-448F-8348-082561D326AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{934ECF2C-3C5D-448F-8348-082561D326AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{934ECF2C-3C5D-448F-8348-082561D326AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{934ECF2C-3C5D-448F-8348-082561D326AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A0B1936-AF9C-4D0F-978C-92216A75936D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A0B1936-AF9C-4D0F-978C-92216A75936D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A0B1936-AF9C-4D0F-978C-92216A75936D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A0B1936-AF9C-4D0F-978C-92216A75936D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1DCA64-3CF5-4F1F-8E26-543849969430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1DCA64-3CF5-4F1F-8E26-543849969430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1DCA64-3CF5-4F1F-8E26-543849969430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1DCA64-3CF5-4F1F-8E26-543849969430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E573A7-C282-4376-A5A7-EE8D39AE7050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E573A7-C282-4376-A5A7-EE8D39AE7050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E573A7-C282-4376-A5A7-EE8D39AE7050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E573A7-C282-4376-A5A7-EE8D39AE7050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F953C2E3-AD83-418C-BEBE-78ED01E08861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F953C2E3-AD83-418C-BEBE-78ED01E08861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F953C2E3-AD83-418C-BEBE-78ED01E08861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F953C2E3-AD83-418C-BEBE-78ED01E08861}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{837BA2FE-6C93-4AAD-8A36-200A69D988DC} = {0D04900D-F469-4AE9-ACAE-CBD91DFDC2C1}
+		{3B19B8C6-8134-4DA6-812A-DA5A44217F7D} = {0D04900D-F469-4AE9-ACAE-CBD91DFDC2C1}
+		{4057393A-E4EE-4FFC-BA4D-FE0A03579965} = {0D04900D-F469-4AE9-ACAE-CBD91DFDC2C1}
+		{934ECF2C-3C5D-448F-8348-082561D326AA} = {837BA2FE-6C93-4AAD-8A36-200A69D988DC}
+		{0A0B1936-AF9C-4D0F-978C-92216A75936D} = {3B19B8C6-8134-4DA6-812A-DA5A44217F7D}
+		{9C1DCA64-3CF5-4F1F-8E26-543849969430} = {3B19B8C6-8134-4DA6-812A-DA5A44217F7D}
+		{D9E573A7-C282-4376-A5A7-EE8D39AE7050} = {4057393A-E4EE-4FFC-BA4D-FE0A03579965}
+		{F953C2E3-AD83-418C-BEBE-78ED01E08861} = {4057393A-E4EE-4FFC-BA4D-FE0A03579965}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E412B2A1-A178-4AAE-A0A6-8C9F3472A758}
+	EndGlobalSection
+EndGlobal
