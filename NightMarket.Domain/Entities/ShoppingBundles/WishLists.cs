@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Application.Contracts.Persistence
+namespace NightMarket.Domain.Entities.ShoppingBundles
 {
-	internal class IUnitOfWork
+	public class WishLists
 	{
 	}
 }

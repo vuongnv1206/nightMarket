@@ -10,8 +10,6 @@ namespace NightMarket.Domain.Entities.ProductBundles
 {
 	public class Categories : BaseDomainEntity
 	{
-		//The unique identifier associated with the catalog that contains this category.
-		public int CatalogId { get; set; }
         public string Name { get; set; }
 		public string Description { get; set; }
 

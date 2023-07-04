@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Application.Contracts.Identity
+namespace NightMarket.Domain.Entities.NotificationBundles
 {
-	internal class IAuthService
+	internal class OrderNotifications
 	{
 	}
 }

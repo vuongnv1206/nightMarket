@@ -1,4 +1,4 @@
-﻿using AutoMapper.Configuration;
+﻿
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +16,7 @@ namespace NightMarket.Persistence
 {
 	public static class IdentityServicesRegistration
 	{
-		public static IServiceCollection ConfigureIdentityServices(this IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration configuration)
+		public static IServiceCollection ConfigureIdentityServices(this IServiceCollection services,IConfiguration configuration)
 		{
 	
 			services.AddIdentity<ApplicationUsers, IdentityRole>()

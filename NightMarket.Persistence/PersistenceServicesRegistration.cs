@@ -14,21 +14,14 @@ namespace NightMarket.Persistence
 	{
 		public static IServiceCollection ConfigurePersistenceServices(this IServiceCollection services, IConfiguration configuration)
 		{
-			//services.AddDbContext<ApplicationDbContext>(options =>
-			//   options.UseSqlServer(
-			//	   configuration.GetConnectionString("ApplicationConnectionString")));
-
-			
-				IConfigurationRoot configurationRoot = new ConfigurationBuilder()
-				.SetBasePath(Directory.GetCurrentDirectory())
-				.AddJsonFile("appsettings.json")
-				.Build();
-				var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-				var connectionString = configurationRoot.GetConnectionString("ApplicationConnectionString");
-				builder.UseSqlServer(connectionString);
+			services.AddDbContext<ApplicationDbContext>(options =>
+				options.UseSqlServer(configuration.GetConnectionString("ApplicationConnectionString")));
 
 
-			
+		
+
+
+
 
 
 			//services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

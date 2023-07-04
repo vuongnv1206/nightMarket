@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Application.Contracts.Identity
+namespace NightMarket.Domain.Enums
 {
-	internal class IUserService
+	public enum ProductStatus
 	{
+		Active = 0,
+		Disabled = 1,
+		Hidden = 2,
 	}
 }

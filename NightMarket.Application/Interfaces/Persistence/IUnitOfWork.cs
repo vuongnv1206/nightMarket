@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightMarket.Application.Contracts.Infrastructure
+namespace NightMarket.Application.Interfaces.Persistence
 {
-	internal class IEmailSender
+	public class IUnitOfWork
 	{
 	}
 }
