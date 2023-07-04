@@ -47,6 +47,17 @@ namespace NightMarket.Persistence
 				};
 			});
 
+			//Singin-Google
+			services.AddAuthentication()
+					.AddGoogle("google", opt =>
+					{
+						var googleAuth = configuration.GetSection("Authentication:Google");
+
+						opt.ClientId = googleAuth["ClientId"];
+						opt.ClientSecret = googleAuth["ClientSecret"];
+						opt.SignInScheme = IdentityConstants.ExternalScheme;
+					});
+
 
 			return services;
 		}
