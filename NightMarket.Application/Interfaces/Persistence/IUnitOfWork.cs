@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NightMarket.Application.Extensions;
 using NightMarket.Application.Interfaces.Persistence.Catalog;
+using NightMarket.Domain.Entities.ProductBundles;
 
 namespace NightMarket.Application.Interfaces.Persistence
 {
@@ -16,6 +18,14 @@ namespace NightMarket.Application.Interfaces.Persistence
 		IVariationOptionRepository VariationOptionRepository { get; }
 		IProductItemRepository ProductItemRepository { get; }
 		IProductCombinationRepository ProductCombinationRepository { get; }
+
+		IProductCategoryRepository ProductCategoryRepository { get; }
+
+		IPromotionRepository PromotionRepository { get; }
+
+		IProductPromotionRepository ProductPromotionRepository { get; }
+		ICategoryPromotionRepository CategoryPromotionRepository { get; }
+		IUserPromotionRepository UserPromotionRepository { get; }
 		Task Save();
 	}
 }

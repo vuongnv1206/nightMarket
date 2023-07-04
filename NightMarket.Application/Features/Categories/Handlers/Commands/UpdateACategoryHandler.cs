@@ -50,7 +50,6 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
 				}
 
 				_mapper.Map(request.CategoryDto, category);
-
 				await _unitOfWork.CategoryRepository.UpdateAsync(category);
 				await _unitOfWork.Save();
 

@@ -42,7 +42,6 @@ namespace NightMarket.Persistence
 
 		//IdentityBundles
 		public DbSet<Addresses> Addresses { get; set; }
-		public DbSet<UserAddresses> UserAddresses { get; set; }
 
 		//ProductBundles
 		public DbSet<Categories> Categories { get; set; }
@@ -61,7 +60,9 @@ namespace NightMarket.Persistence
 
         public DbSet<ProductCombinations> ProductCombinations { get; set; }
 
+        public DbSet<UserPromotions> UserPromotions { get; set; }
 
+		public DbSet<ProductPromotions> ProductPromotions { get; set; }
 
 
         //Others

@@ -1,4 +1,5 @@
-﻿using NightMarket.Application.DTOs.Common;
+﻿using NightMarket.Application.DTOs.Catalogs.VariationOptionDto;
+using NightMarket.Application.DTOs.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace NightMarket.Application.DTOs.Catalogs.Variations
 	public class GetAVariationDto : BaseDto
 	{
 		public string Name { get; set; }
+		public IEnumerable<GetVariationOptionDto> VariationOptions { get; set; }
 	}
 }

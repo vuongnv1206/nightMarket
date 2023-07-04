@@ -23,7 +23,7 @@ namespace NightMarket.Application.Features.Variations.Handlers.Queries
 		}
         public async Task<List<GetAllVariationDto>> Handle(GetAllVariationRequest request, CancellationToken cancellationToken)
 		{
-			var variations = await _unitOfWork.VariationRepository.ListAsync();
+			var variations = await _unitOfWork.VariationRepository.GetVariationsOfProduct(request.ProductId,x => x.VariationOptions);
 			return _mapper.Map<List<GetAllVariationDto>>(variations);
 		}
 	}

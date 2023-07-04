@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
-
+using NightMarket.Application.DTOs.Catalogs.ProductItemDto;
 using NightMarket.Application.DTOs.Catalogs.Products.Validators;
+using NightMarket.Application.Features.ProductItems.Requests.Commands;
 using NightMarket.Application.Features.Products.Requests.Commands;
 using NightMarket.Application.Features.Variations.Requests.Commands;
 using NightMarket.Application.Interfaces.Persistence;
@@ -73,6 +74,21 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
 							response.Errors.Add($"Failed to create variation: {variationDto.Name}");
 							break;
 						}
+					}
+				}
+
+				if (request.ProductDto.ProductItemDtos != null && request.ProductDto.ProductItemDtos.Any())
+				{	
+					foreach (var productItemDto in request.ProductDto.ProductItemDtos)
+					{
+						productItemDto.ProductId = product.Id;
+						var createProductItemRequest = new CreateAProductItemRequest
+						{
+							ProductItemDto = productItemDto,
+						};
+
+						var productItemResponse = await _mediator.Send(createProductItemRequest);
+
 					}
 				}
 			}

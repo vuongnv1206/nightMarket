@@ -24,11 +24,13 @@ namespace NightMarket.Application.Features.Variations.Handlers.Commands
         public async Task<BaseCommandResponse> Handle(DeleteAVariationRequest request, CancellationToken cancellationToken)
 		{
 			var response = new BaseCommandResponse();
-			var variation = await _unitOfWork.CategoryRepository.GetByIdAsync(request.VariationId);
+			var variation = await _unitOfWork.VariationRepository.GetByIdAsync(request.VariationId,x => x.VariationOptions);
 
 			if (variation == null) throw new NotFoundException(nameof(Domain.Entities.ProductBundles.Variations), request.VariationId);
 
-			await _unitOfWork.CategoryRepository.DeleteAsync(variation);
+			await _unitOfWork.VariationRepository.DeleteAsync(variation);
+
+			await _unitOfWork.VariationOptionRepository.DeleteRangeAsync(variation.VariationOptions);
 			await _unitOfWork.Save();
 
 			response.IsSuccess = true;

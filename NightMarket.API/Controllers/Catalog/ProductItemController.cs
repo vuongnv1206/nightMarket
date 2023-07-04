@@ -35,13 +35,13 @@ namespace NightMarket.API.Controllers.Catalog
 			return ApiResponse<GetAProductItemDto>.Success(productItem);
 		}
 
-		[HttpPost]
-		public async Task<ActionResult<BaseCommandResponse>> CreateListProductItems([FromBody] IEnumerable<CreateAProductItemDto> productItemDtos)
-		{
-			var command = new CreateListProductItemRequest { ProductItemDtos = productItemDtos };
-			var response = await _mediator.Send(command);
-			return Ok(response);
-		}
+		//[HttpPost]
+		//public async Task<ActionResult<BaseCommandResponse>> CreateListProductItems([FromBody] CreateAProductItemDto productItemDto)
+		//{
+		//	var command = new CreateAProductItemRequest { ProductItemDto = productItemDto };
+		//	var response = await _mediator.Send(command);
+		//	return Ok(response);
+		//}
 
 		[HttpPut("/productItemId")]
 		public async Task<ActionResult<BaseCommandResponse>> UpdateAProductItems([FromBody] UpdateAProductItemDto productItemDto)
