@@ -18,6 +18,9 @@ namespace NightMarket.Persistence.Repositories.Persisence
 		private readonly IProductRepository _productRepository;
 		private readonly IVariationRepository _variationRepository;
 		private readonly ICategoryRepository _categoryRepository;
+		private readonly IVariationOptionRepository _variationOptionRepository;
+		private readonly IProductItemRepository _productItemRepository;
+		private readonly IProductCombinationRepository _productCombinationRepository;
         public UnitOfWork(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
@@ -28,6 +31,13 @@ namespace NightMarket.Persistence.Repositories.Persisence
 		public IVariationRepository VariationRepository => _variationRepository ?? new VariationRepository(_context);
 
 		public ICategoryRepository CategoryRepository => _categoryRepository ?? new CategoryRepository(_context);
+
+		public IVariationOptionRepository VariationOptionRepository => _variationOptionRepository ?? new VariationOptionRepository(_context);
+		
+		public IProductItemRepository ProductItemRepository => _productItemRepository ?? new ProductItemRepository(_context);
+
+		public IProductCombinationRepository ProductCombinationRepository => _productCombinationRepository ?? new ProductCombinationRepository(_context);
+		
 		public void Dispose()
 		{
 			_context.Dispose();

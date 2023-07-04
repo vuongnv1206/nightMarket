@@ -9,5 +9,6 @@ namespace NightMarket.Application.DTOs.Catalogs.Variations.Validators
 {
 	public class UpdateAVariationDtoValidator : AbstractValidator<UpdateAVariationDto>
 	{
+		public UpdateAVariationDtoValidator() { }
 	}
 }

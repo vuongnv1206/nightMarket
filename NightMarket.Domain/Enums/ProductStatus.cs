@@ -8,8 +8,9 @@ namespace NightMarket.Domain.Enums
 {
 	public enum ProductStatus
 	{
-		Active = 0,
-		Disabled = 1,
-		Hidden = 2,
+		Published = 0,   //Ngày ra mắt
+		Draft = 1,      //Nháp
+		Scheduled = 2,  //Ngày tương lai sẽ ra mắt
+		Archived = 3,   //Lưu trữ (Không còn tồn tại)
 	}
 }

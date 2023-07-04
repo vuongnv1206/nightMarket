@@ -1,6 +1,10 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
+using NightMarket.Application.Exceptions;
 using NightMarket.Application.Features.Categories.Requests.Commands;
 using NightMarket.Application.Features.Products.Requests.Commands;
+using NightMarket.Application.Interfaces.Persistence;
+using NightMarket.Application.Interfaces.Persistence.Catalog;
 using NightMarket.Application.Responses;
 using System;
 using System.Collections.Generic;
@@ -12,9 +16,28 @@ namespace NightMarket.Application.Features.Products.Handles.Commands
 {
 	public class DeleteACategoryHandler : IRequestHandler<DeleteACategoryRequest, BaseCommandResponse>
 	{
-		public async Task<BaseCommandResponse> Handle(DeleteACategoryRequest request, CancellationToken cancellationToken)
+		private readonly IUnitOfWork _unitOfWork;
+		private readonly IMapper _mapper;
+        public DeleteACategoryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        {
+			_unitOfWork = unitOfWork;
+			_mapper = mapper;
+        }
+        public async Task<BaseCommandResponse> Handle(DeleteACategoryRequest request, CancellationToken cancellationToken)
 		{
-			throw new NotImplementedException();
+			var response = new BaseCommandResponse();
+			var category = await _unitOfWork.CategoryRepository.GetByIdAsync(request.CategoryId);
+
+			if (category == null) throw new NotFoundException(nameof(Domain.Entities.ProductBundles.Categories), request.CategoryId);
+
+			await _unitOfWork.CategoryRepository.DeleteAsync(category);
+			await _unitOfWork.Save();
+
+			response.IsSuccess = true;
+			response.Message = "Delete Successful";
+			response.Id = category.Id;
+
+			return response;
 		}
 	}
 }

@@ -17,27 +17,16 @@
   <ItemGroup>
     <Folder Include="Constants\" />
     <Folder Include="DTOs\Catalogs\ProductConfigurationDto\" />
-    <Folder Include="DTOs\Catalogs\VariationOptionDto\" />
-    <Folder Include="DTOs\Catalogs\ProductItemDto\" />
     <Folder Include="Features\Coupons\Handlers\Commands\" />
     <Folder Include="Features\Coupons\Handlers\Queries\" />
     <Folder Include="Features\Coupons\Requests\Commands\" />
     <Folder Include="Features\Coupons\Requests\Queries\" />
-    <Folder Include="Features\ProductConfigurations\Handlers\Commands\" />
-    <Folder Include="Features\ProductConfigurations\Handlers\Queries\" />
-    <Folder Include="Features\ProductConfigurations\Requests\Commands\" />
-    <Folder Include="Features\ProductConfigurations\Requests\Queries\" />
-    <Folder Include="Features\ProductItems\Handlers\Commands\" />
-    <Folder Include="Features\ProductItems\Handlers\Queries\" />
-    <Folder Include="Features\ProductItems\Requests\Commands\" />
-    <Folder Include="Features\ProductItems\Requests\Queries\" />
-    <Folder Include="Features\VariationOptions\Handlers\Commands\" />
-    <Folder Include="Features\VariationOptions\Handlers\Queries\" />
-    <Folder Include="Features\VariationOptions\Requests\Commands\" />
-    <Folder Include="Features\VariationOptions\Requests\Queries\" />
+    <Folder Include="Features\ProductCombinations\Handlers\Commands\" />
+    <Folder Include="Features\ProductCombinations\Handlers\Queries\" />
+    <Folder Include="Features\ProductCombinations\Requests\Commands\" />
+    <Folder Include="Features\ProductCombinations\Requests\Queries\" />
     <Folder Include="Interfaces\Infrastructure\" />
     <Folder Include="Models\" />
-    <Folder Include="Profiles\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NightMarket.Domain.Common;
 using NightMarket.Domain.Entities;
+using NightMarket.Domain.Entities.Catalogs;
 using NightMarket.Domain.Entities.IdentityBundles;
 using NightMarket.Domain.Entities.ProductBundles;
 using System;
@@ -27,7 +28,7 @@ namespace NightMarket.Persistence
 
 			base.OnModelCreating(modelBuilder);
 
-			
+
 			foreach (var entityType in modelBuilder.Model.GetEntityTypes())
 			{
 				var tableName = entityType.GetTableName();
@@ -47,7 +48,6 @@ namespace NightMarket.Persistence
 		public DbSet<Categories> Categories { get; set; }
 		public DbSet<CategoryPromotions> CategoryPromotions { get; set; }
 		public DbSet<Coupons> Coupons { get; set; }
-		public DbSet<ProductConfigurations> ProductConfigurations { get; set; }
 		public DbSet<ProductInventory> ProductInventories { get; set; }
 		public DbSet<Products> Products { get; set; }
 		public DbSet<ProductItems> ProductItems { get; set; }
@@ -59,16 +59,18 @@ namespace NightMarket.Persistence
 
 		public DbSet<ProductCategories> ProductCategories { get; set; }
 
-
-
-
-		//Others
-
+        public DbSet<ProductCombinations> ProductCombinations { get; set; }
 
 
 
 
-		public virtual async Task<int> SaveChangesAsync(string username = "SYSTEM")
+        //Others
+
+
+
+
+
+        public virtual async Task<int> SaveChangesAsync(string username = "SYSTEM")
 		{
 			foreach (var entry in base.ChangeTracker.Entries<BaseDomainEntity>()
 				.Where(q => q.State == EntityState.Added || q.State == EntityState.Modified))
@@ -89,6 +91,8 @@ namespace NightMarket.Persistence
 			{
 				if (entry.State == EntityState.Deleted)
 				{
+					entry.State = EntityState.Modified; // Đặt trạng thái thành Modified
+					entry.Property("DeleteAt").IsModified = true; // Đánh dấu thuộc tính DeleteAt là đã thay đổi
 					entry.Entity.DeleteAt = DateTime.Now;
 				}
 
