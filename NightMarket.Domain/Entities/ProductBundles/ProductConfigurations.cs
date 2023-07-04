@@ -12,5 +12,8 @@ namespace NightMarket.Domain.Entities.ProductBundles
         public int ProductItemId { get; set; }
         public int VariationOptionsId { get; set; }
 
+        public ProductItems ProductItems { get; set; }
+        public VariationOptions VariationOptions { get; set; }
+
     }
 }

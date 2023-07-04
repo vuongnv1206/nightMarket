@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NightMarket.Domain.Enums
 {
-	public enum DiscountType
+	public enum PromotionType
 	{
 		Percentage = 0,
 		FixedAmount = 1,

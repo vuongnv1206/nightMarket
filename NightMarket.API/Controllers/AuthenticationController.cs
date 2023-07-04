@@ -38,7 +38,7 @@ namespace NightMarket.API.Controllers
 			_signInManager = signInManager;
 			_emailService = emailService;
 		}
-
+		
 		[HttpPost("Register")]
 		public async Task<ApiResponse> Register(RegisterUser registerUser, string role)
 		{

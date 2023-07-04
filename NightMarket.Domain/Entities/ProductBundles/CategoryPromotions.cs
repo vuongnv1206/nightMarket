@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace NightMarket.Domain.Entities.ProductBundles
 {
-	public class Variations : BaseDomainEntity
+	public class CategoryPromotions : BaseDomainEntity
 	{
         public int CategoryId { get; set; }
-        public string Name { get; set; }
+        public int PromotionId { get; set; }
         public Categories Categories { get; set; }
-        public IEnumerable<VariationOptions> VariationOptions { get; set; }
+        public Promotions Promotions { get; set; }
     }
 }
